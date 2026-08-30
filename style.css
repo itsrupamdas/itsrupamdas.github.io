@@ -376,9 +376,8 @@ section:hover {
 }
 
 .about-headline .highlight {
-    color: var(--charcoal);
-    border-bottom: 2px solid var(--amber);
-    padding-bottom: 2px;
+    color: var(--amber);
+    border-bottom: none;
 }
 
 .about-body {
@@ -910,8 +909,8 @@ section:hover {
 }
 
 .client-hero h1 .highlight {
-    border-bottom: 3.5px solid var(--amber);
-    padding-bottom: 2px;
+    color: var(--amber);
+    border-bottom: none;
 }
 
 .client-hero-sub {
