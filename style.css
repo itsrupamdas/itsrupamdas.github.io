@@ -318,11 +318,7 @@ section:hover {
 }
 
 .section-title-line {
-    width: 44px;
-    height: 3px;
-    background-color: var(--amber);
-    border-radius: var(--radius-full);
-    margin-top: 8px;
+    display: none;
 }
 
 .section-subtitle {
