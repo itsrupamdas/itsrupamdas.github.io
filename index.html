@@ -17,6 +17,10 @@
     
     <!-- Custom Brand Stylesheet (60-30-10 System) -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Calendly Popup Widget Assets -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 
@@ -76,6 +80,13 @@
                 <a href="https://www.instagram.com/consultwithrupam/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://wa.me/8801715999862" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 <a href="mailto:mail.dasrupam@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <!-- Schedule Coffee Chat Button -->
+            <div class="hero-cta-wrapper">
+                <a href="https://calendly.com/rupamdas/coffee-chat" target="_blank" class="btn-primary hero-coffee-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rupamdas/coffee-chat?hide_landing_page_details=1&primary_color=f2a93b'});return false;">
+                    <i class="fas fa-mug-hot"></i> Schedule a Coffee Chat
+                </a>
             </div>
         </div>
 
@@ -365,6 +376,14 @@
                             <div class="contact-item-text">
                                 <span>LinkedIn</span>
                                 <p>linkedin.com/in/itsrupamdas</p>
+                            </div>
+                        </a>
+
+                        <a href="https://calendly.com/rupamdas/coffee-chat" target="_blank" class="contact-item-row" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rupamdas/coffee-chat?hide_landing_page_details=1&primary_color=f2a93b'});return false;">
+                            <div class="contact-item-icon" style="background-color: var(--amber); color: #FFFFFF;"><i class="fas fa-mug-hot"></i></div>
+                            <div class="contact-item-text">
+                                <span>Schedule a Coffee Chat</span>
+                                <p>calendly.com/rupamdas/coffee-chat</p>
                             </div>
                         </a>
 
