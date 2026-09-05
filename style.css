@@ -1253,29 +1253,206 @@ section:hover {
     box-sizing: border-box;
 }
 
-/* Free Audit Consultation Banner */
-.audit-banner {
+/* Interactive Audit Lead Form Section */
+.audit-section-container {
+    margin-top: 48px;
     background-color: var(--bg-canvas);
-    border: 2px solid var(--amber);
-    border-radius: var(--radius-md);
-    padding: 40px;
-    text-align: center;
-    margin-top: 40px;
+    border: 1.5px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 44px;
+    box-shadow: var(--shadow-subtle);
 }
 
-.audit-banner h3 {
-    font-size: 2rem;
+.audit-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.audit-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: var(--weight-bold);
+    color: var(--amber-dark);
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.audit-info h3 {
+    font-size: 1.85rem;
     font-weight: var(--weight-bold);
     color: var(--charcoal);
     margin-bottom: 12px;
+    line-height: 1.3;
 }
 
-.audit-banner p {
-    font-size: 1.05rem;
+.audit-info p {
+    font-size: 0.98rem;
     color: var(--charcoal-secondary);
-    max-width: 680px;
-    margin: 0 auto 24px auto;
-    line-height: 1.7;
+    line-height: 1.65;
+    margin-bottom: 22px;
+}
+
+.audit-deliverables {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.deliverable-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.deliverable-item i {
+    color: var(--amber);
+    font-size: 1.1rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.deliverable-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.deliverable-item strong {
+    font-size: 0.96rem;
+    color: var(--charcoal);
+}
+
+.deliverable-item span {
+    font-size: 0.88rem;
+    color: var(--charcoal-muted);
+}
+
+.audit-guarantee {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+}
+
+.audit-guarantee i {
+    color: var(--amber);
+}
+
+/* Form Card */
+.audit-form-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.audit-form-card h4 {
+    font-size: 1.35rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    margin-bottom: 6px;
+}
+
+.audit-form-card .form-sub {
+    font-size: 0.88rem;
+    color: var(--charcoal-muted);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-canvas);
+    color: var(--charcoal);
+    font-size: 0.94rem;
+    font-family: inherit;
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--amber);
+    background-color: #FFFFFF;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(242, 169, 59, 0.2);
+}
+
+.form-submit-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-email-alt {
+    width: 100%;
+    margin-top: 10px;
+    background: none;
+    border: 1px dashed var(--border-subtle);
+    color: var(--charcoal-muted);
+    padding: 10px;
+    font-size: 0.88rem;
+    font-weight: var(--weight-bold);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.btn-email-alt:hover {
+    border-color: var(--charcoal);
+    color: var(--charcoal);
+    background-color: var(--bg-canvas);
+}
+
+.form-feedback {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+    font-weight: var(--weight-bold);
+    text-align: center;
+}
+
+.form-feedback.success {
+    background-color: rgba(242, 169, 59, 0.15);
+    color: var(--charcoal);
+    border: 1px solid var(--amber);
 }
 
 /* ==========================================================================
@@ -1284,8 +1461,13 @@ section:hover {
 @media (max-width: 900px) {
     .about-grid,
     .skills-two-col,
-    .contact-section-grid {
+    .contact-section-grid,
+    .audit-grid {
         grid-template-columns: 1fr;
+    }
+
+    .audit-section-container {
+        padding: 28px 20px;
     }
 
     .about-photo-frame {
