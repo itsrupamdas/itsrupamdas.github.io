@@ -446,7 +446,181 @@ section:hover {
 }
 
 /* ==========================================================================
-   2. Skills & Tools Section (Matching Slide 3)
+   2. Work Experience Section
+   ========================================================================== */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.experience-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    border-left: 5px solid var(--amber);
+    padding: 26px 30px;
+    box-shadow: var(--shadow-subtle);
+    transition: var(--transition);
+}
+
+.experience-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--charcoal);
+    border-left-color: var(--amber);
+}
+
+.exp-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 18px;
+}
+
+.exp-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.exp-role-badge {
+    align-self: flex-start;
+    font-size: 0.8rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    background-color: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.exp-role-badge i {
+    color: var(--amber);
+}
+
+.exp-role-badge.freelance i {
+    color: var(--amber-dark);
+}
+
+.exp-role-title {
+    font-size: 1.25rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    letter-spacing: -0.3px;
+    margin: 0;
+}
+
+.exp-company-name {
+    font-size: 0.98rem;
+    font-weight: var(--weight-regular);
+    color: var(--charcoal-secondary);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+}
+
+.exp-company-name i {
+    color: var(--amber);
+    font-size: 0.85rem;
+}
+
+.exp-meta-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.exp-type-tag {
+    font-size: 0.82rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    background-color: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.exp-type-tag i {
+    color: var(--charcoal-muted);
+    font-size: 0.75rem;
+}
+
+.exp-type-tag.fulltime {
+    background-color: var(--amber-soft);
+    border-color: var(--amber-border);
+    color: var(--charcoal);
+}
+
+.exp-type-tag.fulltime i {
+    color: var(--amber-dark);
+}
+
+.exp-type-tag.freelance {
+    background-color: var(--bg-subtle);
+    border-color: var(--border-subtle);
+}
+
+.exp-type-tag.freelance i {
+    color: var(--amber-dark);
+}
+
+.exp-duration {
+    font-size: 0.86rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal-muted);
+    background-color: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.exp-duration i {
+    color: var(--amber);
+}
+
+.exp-bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.exp-bullet-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--charcoal-secondary);
+    line-height: 1.55;
+}
+
+.exp-bullet-list li i {
+    color: var(--amber);
+    font-size: 0.9rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   3. Skills & Tools Section (Matching Slide 3)
    ========================================================================== */
 .skills-two-col {
     display: grid;
@@ -826,7 +1000,127 @@ section:hover {
 }
 
 /* ==========================================================================
-   5. Contact Section Styles (Modern UI-Friendly Layout)
+   5. Education Section
+   ========================================================================== */
+.education-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-subtle);
+    transition: var(--transition);
+}
+
+.education-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--charcoal);
+}
+
+.edu-card-top-bar {
+    height: 4px;
+    background-color: var(--amber);
+}
+
+.edu-card-body {
+    padding: 26px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.edu-main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 260px;
+}
+
+.edu-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.edu-degree-badge {
+    font-size: 0.82rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    background-color: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.edu-degree-badge i {
+    color: var(--amber);
+}
+
+.edu-status-badge {
+    font-size: 0.82rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    background-color: var(--amber-soft);
+    border: 1px solid var(--amber-border);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.edu-status-badge i {
+    color: var(--amber-dark);
+}
+
+.edu-degree-title {
+    font-size: 1.25rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    letter-spacing: -0.3px;
+    margin: 0;
+}
+
+.edu-institution-sub {
+    font-size: 0.92rem;
+    color: var(--charcoal-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+}
+
+.edu-institution-sub i {
+    color: var(--amber);
+    font-size: 0.85rem;
+}
+
+.edu-timeline-pill {
+    background-color: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    padding: 10px 18px;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+}
+
+.edu-timeline-pill i {
+    color: var(--amber);
+}
+
+/* ==========================================================================
+   6. Contact Section Styles (Modern UI-Friendly Layout)
    ========================================================================== */
 .contact-section-grid {
     display: grid;
@@ -1732,5 +2026,29 @@ section:hover {
         flex-direction: column;
         text-align: center;
     }
+
+    .exp-card-header,
+    .edu-card-body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .experience-card,
+    .edu-card-body {
+        padding: 20px 18px;
+    }
+
+    .exp-role-title,
+    .edu-degree-title {
+        font-size: 1.15rem;
+    }
+
+    .edu-timeline-pill {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
 }
+
 
