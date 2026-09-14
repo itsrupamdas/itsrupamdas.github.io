@@ -718,19 +718,18 @@ section:hover {
     background-color: var(--bg-card);
     border: 1.5px solid var(--border-subtle);
     border-radius: var(--radius-sm);
-    padding: 12px 16px;
+    padding: 10px 14px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
     font-family: inherit;
-    font-size: 0.98rem;
-    font-weight: var(--weight-bold);
     color: var(--charcoal);
     cursor: pointer;
     box-shadow: var(--shadow-subtle);
     transition: var(--transition);
     text-align: left;
+    text-decoration: none;
 }
 
 .skill-interactive-btn:hover {
@@ -740,10 +739,11 @@ section:hover {
     background-color: #FFFFFF;
 }
 
-.skill-interactive-btn:hover .proof-hint-badge {
-    background-color: var(--amber);
-    color: #FFFFFF;
-    border-color: var(--amber);
+.skill-btn-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-grow: 1;
 }
 
 .skill-dot-indicator {
@@ -751,29 +751,45 @@ section:hover {
     height: 8px;
     border-radius: var(--radius-full);
     background-color: var(--amber);
-    margin-right: 8px;
+    margin-top: 5px;
     flex-shrink: 0;
     display: inline-block;
 }
 
+.skill-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 .skill-name {
-    flex-grow: 1;
+    font-size: 0.95rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    line-height: 1.25;
+}
+
+.skill-subtitle-tag {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--charcoal-muted);
+    line-height: 1.35;
 }
 
 /* Clean Arrow Indicator */
 .item-arrow {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: var(--radius-full);
-    border: 1.5px solid var(--border-subtle);
     background-color: var(--bg-canvas);
-    color: var(--charcoal);
+    border: 1px solid var(--border-subtle);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
-    transition: var(--transition);
+    font-size: 0.75rem;
+    color: var(--charcoal-muted);
     flex-shrink: 0;
+    transition: var(--transition);
 }
 
 .skill-interactive-btn:hover .item-arrow,
