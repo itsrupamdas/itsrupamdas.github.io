@@ -3062,6 +3062,138 @@ section:hover {
     }
 }
 
+/* ==========================================================================
+   MANAGE CONTENT CALENDAR SKILL PAGE (2-Tab System & Evergreen Tagging)
+   ========================================================================== */
+
+/* 2-Tab Architecture Grid */
+.calendar-tabs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.cal-tab-card {
+    background-color: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 22px 24px;
+    transition: var(--transition);
+}
+
+.cal-tab-card.highlight {
+    border-color: var(--amber);
+    background-color: var(--amber-soft);
+}
+
+.cal-tab-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.cal-tab-card.highlight .cal-tab-header {
+    border-bottom-color: var(--amber-border);
+}
+
+.cal-tab-header i {
+    font-size: 1.5rem;
+    color: var(--charcoal-muted);
+}
+
+.cal-tab-card.highlight .cal-tab-header i {
+    color: var(--amber-dark);
+}
+
+.cal-tab-badge {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--charcoal-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.cal-tab-badge.highlight {
+    color: var(--amber-dark);
+}
+
+.cal-tab-header h4 {
+    font-size: 1.12rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    margin: 0;
+}
+
+.cal-tab-card p {
+    font-size: 0.92rem;
+    color: var(--charcoal-secondary);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Evergreen vs Ongoing Content Tag Legend */
+.content-tag-legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.c-tag-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+}
+
+.c-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.c-badge-pill.green {
+    background-color: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.c-badge-pill.amber {
+    background-color: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fde68a;
+}
+
+.c-tag-item p {
+    font-size: 0.88rem;
+    color: var(--charcoal-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .calendar-tabs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-tag-legend {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 
 
