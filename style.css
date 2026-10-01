@@ -2725,378 +2725,150 @@ section:hover {
     color: var(--charcoal);
 }
 
-/* Practical Example Worksheet Section */
+/* Real-World Strategy Worksheet PDF Section */
+.worksheet-pdf-section {
+    margin-bottom: 28px;
+}
+
 .worksheet-intro-note {
     font-size: 0.95rem;
     color: var(--charcoal-secondary);
     margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.worksheet-cards-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.worksheet-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    padding: 24px 26px;
-    box-shadow: var(--shadow-subtle);
-    transition: var(--transition);
-}
-
-.worksheet-card:hover {
-    border-color: var(--charcoal);
-    box-shadow: var(--shadow-hover);
-}
-
-.ws-card-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border-subtle);
-    flex-wrap: wrap;
-}
-
-.ws-badge {
-    background-color: var(--amber);
-    color: #FFFFFF;
-    font-size: 0.72rem;
-    font-weight: 800;
-    padding: 4px 10px;
-    border-radius: var(--radius-full);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.ws-card-header h4 {
-    font-size: 1.25rem;
-    font-weight: var(--weight-bold);
-    color: var(--charcoal);
-    margin: 0;
-}
-
-.ws-data-block {
-    margin-bottom: 16px;
-}
-
-.ws-label {
-    font-size: 0.8rem;
-    font-weight: 800;
-    color: var(--charcoal-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.ws-label i {
-    color: var(--amber);
-}
-
-.ws-highlight-title {
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: var(--charcoal);
-    margin: 0;
-}
-
-.ws-text {
-    font-size: 0.95rem;
-    color: var(--charcoal);
     line-height: 1.6;
-    margin: 0 0 8px 0;
 }
 
-.ws-original-note {
-    background-color: var(--bg-canvas);
-    border-left: 3px solid var(--amber);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: 10px 14px;
-    font-size: 0.84rem;
-    color: var(--charcoal-secondary);
-    font-style: italic;
-    line-height: 1.55;
+.pdf-toolbar {
     display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-top: 8px;
-}
-
-.ws-original-note i {
-    color: var(--amber);
-    margin-top: 3px;
-    font-size: 0.8rem;
-    flex-shrink: 0;
-}
-
-.ws-original-note.mini {
-    margin-top: 8px;
-    padding: 8px 12px;
-    font-size: 0.82rem;
-}
-
-/* SMART Checklist */
-.smart-checklist-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 10px;
-    background-color: var(--bg-canvas);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm);
-    padding: 14px 16px;
-    margin-bottom: 16px;
-}
-
-.smart-check-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.86rem;
-    color: var(--charcoal);
-}
-
-.smart-check-item i {
-    color: var(--amber-dark);
-    font-size: 1rem;
-    flex-shrink: 0;
-}
-
-.ws-goal-box {
-    background-color: var(--amber-soft);
-    border: 1.5px solid var(--amber-border);
-    border-radius: var(--radius-sm);
-    padding: 16px 18px;
-}
-
-.ws-goal-statement {
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: var(--charcoal);
-    line-height: 1.45;
-    margin: 4px 0 8px 0;
-}
-
-/* KPI Cards List */
-.kpi-card-row {
-    background-color: var(--bg-canvas);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm);
-    padding: 16px 18px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    margin-bottom: 12px;
-}
-
-.kpi-num-circle {
-    width: 32px;
-    height: 32px;
-    border-radius: var(--radius-full);
-    background-color: var(--amber);
-    color: #FFFFFF;
-    font-size: 0.92rem;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.kpi-info-box {
-    flex-grow: 1;
-}
-
-.kpi-title-line {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 6px;
-    flex-wrap: wrap;
-}
-
-.kpi-title-line h5 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--charcoal);
-    margin: 0;
-}
-
-.kpi-tag {
-    font-size: 0.7rem;
-    font-weight: 800;
-    padding: 2px 8px;
-    border-radius: var(--radius-full);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.kpi-tag.primary {
-    background-color: #ecfdf5;
-    color: #065f46;
-    border: 1px solid #a7f3d0;
-}
-
-.kpi-tag.supportive {
-    background-color: #eff6ff;
-    color: #1e40af;
-    border: 1px solid #bfdbfe;
-}
-
-.kpi-info-box p {
-    font-size: 0.92rem;
-    color: var(--charcoal-secondary);
-    line-height: 1.55;
-    margin: 0;
-}
-
-/* Persona Profile Card */
-.persona-top-profile {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 16px;
     background-color: var(--bg-canvas);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     padding: 16px 20px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-.persona-avatar-box i {
-    font-size: 2.6rem;
-    color: var(--amber);
+.pdf-info-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
-.persona-summary-text {
-    flex-grow: 1;
-}
-
-.persona-cat-label {
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: var(--amber-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: block;
-    margin-bottom: 2px;
-}
-
-.persona-summary-text h3 {
-    font-size: 1.18rem;
-    font-weight: 800;
-    color: var(--charcoal);
-    margin: 0 0 6px 0;
-}
-
-.persona-bio-quote {
-    font-size: 0.88rem;
-    color: var(--charcoal-secondary);
-    font-style: italic;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.persona-grid-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.p-field-box {
-    background-color: var(--bg-canvas);
-    border: 1px solid var(--border-subtle);
+.pdf-file-icon {
+    width: 44px;
+    height: 44px;
     border-radius: var(--radius-sm);
-    padding: 12px 16px;
+    background-color: #fee2e2;
+    color: #ef4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-subtle);
 }
 
-.p-field-box.span-2 {
-    grid-column: 1 / -1;
+.pdf-title-group h4 {
+    font-size: 1.08rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    margin: 0 0 4px 0;
 }
 
-.p-field-title {
-    font-size: 0.78rem;
-    font-weight: 800;
+.pdf-title-group p {
+    font-size: 0.84rem;
     color: var(--charcoal-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-bottom: 4px;
 }
 
-.p-field-title i {
-    color: var(--amber);
-}
-
-.p-field-val {
-    font-size: 0.92rem;
-    color: var(--charcoal);
-    line-height: 1.5;
-    margin: 0;
-    font-weight: 500;
-}
-
-/* Customer Journey Cards */
-.journey-matrix-stack {
+.pdf-actions-right {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
-.journey-row-card {
-    background-color: var(--bg-canvas);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm);
-    padding: 16px 18px;
-}
-
-.j-phase-pill {
-    display: inline-block;
-    background-color: var(--amber-soft);
-    color: var(--charcoal);
-    border: 1px solid var(--amber-border);
-    font-size: 0.75rem;
-    font-weight: 800;
-    padding: 2px 10px;
+.btn-pdf-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
     border-radius: var(--radius-full);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-}
-
-.j-phase-q {
     font-size: 0.9rem;
-    color: var(--charcoal);
-    margin-bottom: 6px;
-    line-height: 1.5;
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
 }
 
-.j-phase-sol {
-    font-size: 0.92rem;
-    color: var(--charcoal-secondary);
-    line-height: 1.55;
+.btn-pdf-action.primary {
+    background-color: var(--amber);
+    color: #FFFFFF;
+    border: 1.5px solid var(--amber);
+    box-shadow: var(--shadow-subtle);
+}
+
+.btn-pdf-action.primary:hover {
+    background-color: var(--amber-dark);
+    border-color: var(--amber-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-pdf-action.secondary {
+    background-color: var(--bg-card);
+    color: var(--charcoal);
+    border: 1.5px solid var(--border-subtle);
+}
+
+.btn-pdf-action.secondary:hover {
+    border-color: var(--charcoal);
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-subtle);
+}
+
+.pdf-embed-wrapper {
+    width: 100%;
+    height: 780px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1.5px solid var(--border-subtle);
+    background-color: #525659;
+    box-shadow: var(--shadow-subtle);
+}
+
+.pdf-embed-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
 }
 
 @media (max-width: 768px) {
-    .persona-grid-details {
-        grid-template-columns: 1fr;
+    .pdf-embed-wrapper {
+        height: 520px;
     }
 
-    .smart-checklist-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .kpi-card-row {
+    .pdf-toolbar {
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .pdf-actions-right {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .btn-pdf-action {
+        width: 100%;
+        justify-content: center;
     }
 }
 
