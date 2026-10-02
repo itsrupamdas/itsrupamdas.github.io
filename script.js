@@ -49,11 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. Social Media Audit Lead Form ---
-    // Google Apps Script Web App URL for direct Google Sheet lead storage:
-    // Once deployed in your Google Sheet (Extensions > Apps Script > Deploy as Web App), paste the URL below:
-    const GOOGLE_SHEET_WEBAPP_URL = ''; 
-
+    // --- 3. Social Media Audit Lead Form (Direct Email Delivery) ---
+    const NOTIFICATION_EMAIL = 'mail.dasrupam@gmail.com';
     const auditForm = document.getElementById('social-audit-form');
 
     if (auditForm) {
@@ -75,37 +72,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting Request...';
             }
 
-            // 1. Send data directly to Google Sheet (if Web App URL is configured)
-            const leadData = {
-                timestamp: new Date().toISOString(),
-                name: name + (company ? ` (${company})` : ''),
-                contact: contact,
-                email: email,
-                page: page
-            };
+            const fullNameBrand = name + (company ? ` (${company})` : '');
 
-            if (GOOGLE_SHEET_WEBAPP_URL) {
-                try {
-                    fetch(GOOGLE_SHEET_WEBAPP_URL, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(leadData)
-                    });
-                } catch (err) {
-                    console.warn('Google Sheet submission note:', err);
-                }
-            }
+            // 1. Send lead details directly to your email (mail.dasrupam@gmail.com) via FormSubmit AJAX
+            fetch(`https://formsubmit.co/ajax/${NOTIFICATION_EMAIL}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: `🚨 New Audit Request: ${fullNameBrand}`,
+                    _template: 'table',
+                    _captcha: 'false',
+                    'Name': fullNameBrand,
+                    'Phone / WhatsApp': contact,
+                    'Email Address': email,
+                    'Business Social Media Page': page,
+                    'Submitted At': new Date().toLocaleString()
+                })
+            }).catch(err => {
+                console.warn('Email dispatch notice:', err);
+            });
 
-            // 2. Format exact WhatsApp chat message as requested
-            const chatMessage = `Name: ${name}` + (company ? ` (${company})` : '') + `\n` +
+            // 2. Prepare WhatsApp direct message in case client wants to chat right away
+            const chatMessage = `Name: ${fullNameBrand}\n` +
                                 `📱 Contact: ${contact}\n` +
                                 `✉️ Email: ${email}\n` +
                                 `🔗 Business Social Media Page:  Web: ${page}`;
 
             const whatsappUrl = `https://wa.me/8801715999862?text=${encodeURIComponent(chatMessage)}`;
 
-            // 3. Standard In-Page Confirmation Screen
+            // 3. Display Standard Thank You / Confirmation Screen
             setTimeout(() => {
                 auditForm.style.display = 'none';
 
@@ -120,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (successSummary) {
                     successSummary.innerHTML = 
-                        `<strong>Name:</strong> ${name} ${company ? `(${company})` : ''}<br>` +
+                        `<strong>Name:</strong> ${fullNameBrand}<br>` +
                         `<strong>📱 Contact:</strong> ${contact}<br>` +
                         `<strong>✉️ Email:</strong> ${email}<br>` +
                         `<strong>🔗 Business Social Media Page:</strong> <span style="word-break: break-all;">${page}</span>`;
