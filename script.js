@@ -86,8 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const budget = document.getElementById('audit-budget') ? document.getElementById('audit-budget').value : '';
             const goal = document.getElementById('audit-goal').value;
             const notes = document.getElementById('audit-notes') ? document.getElementById('audit-notes').value.trim() : '';
+            const submitBtn = document.getElementById('audit-submit-btn');
 
             if (!name || !page || !contact) return;
+
+            // Show standard loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting Request...';
+            }
 
             // 1. Send data directly to Google Sheet (if Web App URL is configured)
             const leadData = {
@@ -116,76 +123,61 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // 2. Format optimized message for WhatsApp chat
-            let chatMessage = `👋 *Hi Rupam! I'd like to claim my Free Social Media Audit:*\n\n` +
-                              `👤 *Name:* ${name}` + (company ? ` (${company})` : '') + `\n` +
-                              `📱 *Contact:* ${contact}\n`;
+            // 2. Format exact WhatsApp chat message as requested
+            let chatMessage = `Name: ${name}` + (company ? ` (${company})` : '') + `\n` +
+                              `📱 Contact: ${contact}\n`;
 
             if (email) {
-                chatMessage += `✉️ *Email:* ${email}\n`;
+                chatMessage += `✉️ Email: ${email}\n`;
             }
 
-            chatMessage += `🔗 *Social Page / Web:* ${page}\n` +
-                           `🛠️ *Services Needed:* ${services}\n`;
+            chatMessage += `🔗 Business Social Media Page:  Web: ${page}\n` +
+                           `🛠️ Services Interested In: ${services}\n`;
 
             if (budget) {
-                chatMessage += `💰 *Monthly Budget:* ${budget}\n`;
+                chatMessage += `💰 Monthly Budget: ${budget}\n`;
             }
 
-            chatMessage += `🎯 *Primary Goal:* ${goal}\n`;
+            chatMessage += `🎯 Primary Goal: ${goal}\n`;
 
             if (notes) {
-                chatMessage += `📝 *Notes & Challenges:* ${notes}\n`;
+                chatMessage += `📝 Notes / Details: ${notes}\n`;
             }
 
-            chatMessage += `\n_Looking forward to your audit and growth recommendations!_`;
+            chatMessage += `\nLooking forward to your audit and growth recommendations!`;
 
             const whatsappUrl = `https://wa.me/8801715999862?text=${encodeURIComponent(chatMessage)}`;
-            
-            const feedback = document.getElementById('form-feedback');
-            if (feedback) {
-                feedback.style.display = 'block';
-                feedback.className = 'form-feedback success';
-                feedback.innerHTML = '<i class="fas fa-check-circle"></i> <strong>Audit Request Saved!</strong> Opening WhatsApp to start our chat...';
-            }
 
+            // 3. Standard In-Page Confirmation Screen
             setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
+                auditForm.style.display = 'none';
+
+                const successCard = document.getElementById('audit-success-card');
+                const successTitle = document.getElementById('success-title');
+                const successSummary = document.getElementById('success-lead-summary');
+                const whatsappBtn = document.getElementById('success-whatsapp-btn');
+
+                if (successTitle) {
+                    successTitle.textContent = `Thank You, ${name}! Your Audit Request is Received.`;
+                }
+
+                if (successSummary) {
+                    successSummary.innerHTML = 
+                        `<strong>👤 Name / Brand:</strong> ${name} ${company ? `(${company})` : ''}<br>` +
+                        `<strong>📱 Contact:</strong> ${contact} ${email ? `&bull; ${email}` : ''}<br>` +
+                        `<strong>🔗 Page / Web:</strong> <span style="word-break: break-all;">${page}</span><br>` +
+                        `<strong>🛠️ Services:</strong> ${services}<br>` +
+                        `<strong>🎯 Goal:</strong> ${goal}`;
+                }
+
+                if (whatsappBtn) {
+                    whatsappBtn.href = whatsappUrl;
+                }
+
+                if (successCard) {
+                    successCard.style.display = 'block';
+                }
             }, 600);
-        });
-    }
-
-    if (emailBtn) {
-        emailBtn.addEventListener('click', () => {
-            const name = document.getElementById('audit-name').value.trim();
-            const company = document.getElementById('audit-company').value.trim();
-            const contact = document.getElementById('audit-contact').value.trim();
-            const email = document.getElementById('audit-email') ? document.getElementById('audit-email').value.trim() : '';
-            const page = document.getElementById('audit-page').value.trim();
-            const services = getSelectedServices();
-            const budget = document.getElementById('audit-budget') ? document.getElementById('audit-budget').value : '';
-            const goal = document.getElementById('audit-goal').value;
-            const notes = document.getElementById('audit-notes') ? document.getElementById('audit-notes').value.trim() : '';
-
-            if (!name || !page || !contact) {
-                alert('Please fill in your Name, Page Link, and WhatsApp/Phone contact details first.');
-                return;
-            }
-
-            const subject = encodeURIComponent(`Free Social Media Audit Request - ${name}${company ? ` (${company})` : ''}`);
-            let emailBody = `Hi Rupam,\n\nI would like to request a Free Social Media Account Audit for my business.\n\n` +
-                            `Name: ${name}\n` +
-                            (company ? `Company / Brand: ${company}\n` : '') +
-                            `Contact: ${contact}\n` +
-                            (email ? `Email: ${email}\n` : '') +
-                            `Page Link: ${page}\n` +
-                            `Services Interested In: ${services}\n` +
-                            (budget ? `Monthly Budget: ${budget}\n` : '') +
-                            `Primary Goal: ${goal}\n` +
-                            (notes ? `Notes / Challenges: ${notes}\n` : '') +
-                            `\nThank you!`;
-
-            window.location.href = `mailto:mail.dasrupam@gmail.com?subject=${subject}&body=${encodeURIComponent(emailBody)}`;
         });
     }
 });
