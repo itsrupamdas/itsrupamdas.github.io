@@ -339,8 +339,8 @@
 
                         <!-- Page Link -->
                         <div class="form-group">
-                            <label for="audit-page">Facebook / Instagram Page Link or Website *</label>
-                            <input type="text" id="audit-page" name="page_link" required placeholder="e.g. facebook.com/yourpage or @instagramhandle">
+                            <label for="audit-page">Business Social Media Page / Web *</label>
+                            <input type="text" id="audit-page" name="page_link" required placeholder="e.g. facebook.com/apexapparel or https://instagram.com/yourhandle">
                         </div>
 
                         <!-- Service Pill Selector -->
@@ -389,17 +389,31 @@
                             <textarea id="audit-notes" name="notes" rows="3" placeholder="What is currently not working with your social media? What are your growth goals?"></textarea>
                         </div>
 
-                        <!-- Primary CTA Button -->
-                        <button type="submit" class="btn-primary form-submit-btn">
-                            <i class="fab fa-whatsapp"></i> Request Free Social Media Audit in Chat
+                        <!-- Standard Submit Button -->
+                        <button type="submit" id="audit-submit-btn" class="btn-primary form-submit-btn">
+                            <i class="fas fa-paper-plane"></i> Request Free Audit
                         </button>
 
-                        <button type="button" id="email-submit-btn" class="btn-email-alt">
-                            <i class="fas fa-envelope"></i> Or Submit via Email
-                        </button>
+                        <p class="form-privacy-note"><i class="fas fa-lock"></i> 100% Free &bull; No obligation &bull; Directly sent to Rupam Das</p>
 
                         <div id="form-feedback" class="form-feedback" style="display: none;"></div>
                     </form>
+
+                    <!-- Standard Post-Submission Success Card -->
+                    <div id="audit-success-card" class="audit-success-card" style="display: none;">
+                        <div class="success-icon-badge"><i class="fas fa-check-circle"></i></div>
+                        <h3 id="success-title">Thank You! Your Audit Request is Received.</h3>
+                        <p class="success-desc">I have received your business details and will personally review your social media page. You’ll receive an actionable 3-step growth breakdown within <strong>24 hours</strong>.</p>
+                        
+                        <div class="success-lead-summary" id="success-lead-summary"></div>
+
+                        <div class="success-chat-cta">
+                            <p class="cta-hint"><strong>Prefer an instant response?</strong> Chat directly with me on WhatsApp with your submitted details:</p>
+                            <a id="success-whatsapp-btn" href="#" target="_blank" class="btn-whatsapp-direct">
+                                <i class="fab fa-whatsapp"></i> Chat on WhatsApp Now
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
