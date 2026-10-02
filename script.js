@@ -124,8 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         `<strong>🔗 Business Social Media Page:</strong> <span style="word-break: break-all;">${page}</span>`;
                 }
 
-                if (whatsappBtn) {
-                    whatsappBtn.href = whatsappUrl;
+                const calendlyBtn = document.getElementById('success-calendly-btn');
+                if (calendlyBtn) {
+                    calendlyBtn.href = 'https://calendly.com/rupamdas/coffee-chat';
                 }
 
                 if (successCard) {
