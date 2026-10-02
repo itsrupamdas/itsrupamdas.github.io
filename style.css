@@ -2366,7 +2366,7 @@ section:hover {
 
 /* Interactive Audit Lead Form Section */
 .audit-section-container {
-    margin-top: 48px;
+    margin-bottom: 40px;
     background-color: var(--bg-canvas);
     border: 1.5px solid var(--border-subtle);
     border-radius: var(--radius-lg);
