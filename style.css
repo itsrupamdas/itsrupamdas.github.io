@@ -2693,6 +2693,29 @@ section:hover {
     margin-bottom: 12px;
 }
 
+.btn-calendly-direct {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--amber);
+    color: #FFFFFF;
+    padding: 12px 28px;
+    border-radius: var(--radius-full);
+    font-size: 0.96rem;
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 14px rgba(242, 169, 59, 0.35);
+}
+
+.btn-calendly-direct:hover {
+    background-color: var(--amber-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(242, 169, 59, 0.45);
+    color: #FFFFFF;
+}
+
 .btn-whatsapp-direct {
     display: inline-flex;
     align-items: center;
