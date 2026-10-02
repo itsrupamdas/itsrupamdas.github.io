@@ -307,86 +307,40 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Interactive Intake Form -->
+                <!-- Right Column: Minimal 4-Field Intake Form -->
                 <div class="audit-form-card">
                     <h4>Request Your Free Audit</h4>
-                    <p class="form-sub">Takes 30 seconds. Select your social media needs below:</p>
+                    <p class="form-sub">Takes 30 seconds. Leave your page details below:</p>
 
                     <form id="social-audit-form">
-                        <!-- Row 1: Name & Brand -->
+                        <!-- 1. Name & Brand -->
                         <div class="form-row-2col">
                             <div class="form-group">
                                 <label for="audit-name">Full Name *</label>
                                 <input type="text" id="audit-name" name="name" required placeholder="e.g. John Doe">
                             </div>
                             <div class="form-group">
-                                <label for="audit-company">Brand / Business Name</label>
+                                <label for="audit-company">Brand / Company</label>
                                 <input type="text" id="audit-company" name="company" placeholder="e.g. Apex Apparel">
                             </div>
                         </div>
 
-                        <!-- Row 2: WhatsApp & Email -->
+                        <!-- 2. Contact & Email -->
                         <div class="form-row-2col">
                             <div class="form-group">
-                                <label for="audit-contact">WhatsApp / Phone *</label>
+                                <label for="audit-contact">Phone / WhatsApp *</label>
                                 <input type="tel" id="audit-contact" name="contact" required placeholder="e.g. +880 1712-345678">
                             </div>
                             <div class="form-group">
-                                <label for="audit-email">Email Address</label>
-                                <input type="email" id="audit-email" name="email" placeholder="e.g. john@business.com">
+                                <label for="audit-email">Email Address *</label>
+                                <input type="email" id="audit-email" name="email" required placeholder="e.g. john@business.com">
                             </div>
                         </div>
 
-                        <!-- Page Link -->
+                        <!-- 3. Business Social Media Page / Web -->
                         <div class="form-group">
-                            <label for="audit-page">Business Social Media Page / Web *</label>
+                            <label for="audit-page">🔗 Business Social Media Page / Web *</label>
                             <input type="text" id="audit-page" name="page_link" required placeholder="e.g. facebook.com/apexapparel or https://instagram.com/yourhandle">
-                        </div>
-
-                        <!-- Service Pill Selector -->
-                        <div class="form-group">
-                            <label>Social Media Services Interested In</label>
-                            <div class="service-pills-wrap" id="service-pills">
-                                <button type="button" class="service-pill" data-service="Meta Ads (FB & IG)">Meta Ads (FB & IG)</button>
-                                <button type="button" class="service-pill" data-service="Social Media Strategy">Social Media Strategy</button>
-                                <button type="button" class="service-pill" data-service="Canva Creative & Reels">Canva Creative & Reels</button>
-                                <button type="button" class="service-pill" data-service="Monthly Account Management">Monthly Management</button>
-                                <button type="button" class="service-pill" data-service="Meta Pixel & GTM Setup">Pixel & GTM Setup</button>
-                                <button type="button" class="service-pill" data-service="A/B Testing & Creative Scaling">A/B Testing & Scaling</button>
-                                <button type="button" class="service-pill" data-service="Performance Analytics & Reporting">Analytics & Reporting</button>
-                                <button type="button" class="service-pill" data-service="Not sure — advise me">Not sure — advise me</button>
-                            </div>
-                        </div>
-
-                        <!-- Row 3: Budget & Bottleneck -->
-                        <div class="form-row-2col">
-                            <div class="form-group">
-                                <label for="audit-budget">Monthly Marketing Budget</label>
-                                <select id="audit-budget" name="budget">
-                                    <option value="">Select range</option>
-                                    <option value="Under $300">Under $300</option>
-                                    <option value="$300 – $700">$300 – $700</option>
-                                    <option value="$700 – $1,500">$700 – $1,500</option>
-                                    <option value="$1,500 – $3,000">$1,500 – $3,000</option>
-                                    <option value="$3,000+">$3,000+</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="audit-goal">Primary Challenge / Goal *</label>
-                                <select id="audit-goal" name="goal" required>
-                                    <option value="Need more sales & qualified inquiries">Need more sales & inquiries</option>
-                                    <option value="Page reach & engagement is declining">Page reach & engagement is declining</option>
-                                    <option value="Need high-converting reels & creatives">Need high-converting reels & creatives</option>
-                                    <option value="Meta Ads unprofitable / high cost per lead">Meta Ads unprofitable / high CPL</option>
-                                    <option value="Building social presence from scratch">Building social presence from scratch</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Goals Textarea -->
-                        <div class="form-group">
-                            <label for="audit-notes">Tell me about your goals (Optional)</label>
-                            <textarea id="audit-notes" name="notes" rows="3" placeholder="What is currently not working with your social media? What are your growth goals?"></textarea>
                         </div>
 
                         <!-- Standard Submit Button -->
