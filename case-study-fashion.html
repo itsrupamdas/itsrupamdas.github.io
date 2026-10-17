@@ -83,70 +83,50 @@
             margin-top: 6px;
         }
 
-        .cs-tab-container {
-            margin-top: 20px;
-        }
-
-        .cs-tab-buttons {
+        /* Streamlined Direct Screenshot Stream (No Buttons/Tabs) */
+        .cs-proof-stack {
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 12px;
-            margin-bottom: 20px;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 18px;
         }
 
-        .cs-tab-btn {
-            background: var(--bg-canvas);
+        .cs-proof-item {
+            background: var(--bg-card);
             border: 1px solid var(--border-subtle);
-            padding: 9px 18px;
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            font-weight: 600;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .cs-proof-header {
+            padding: 14px 18px;
+            background: var(--bg-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .cs-proof-header h4 {
+            font-size: 0.98rem;
+            font-weight: 700;
             color: var(--charcoal);
-            cursor: pointer;
-            display: inline-flex;
+            margin: 0;
+            display: flex;
             align-items: center;
             gap: 8px;
-            transition: var(--transition);
         }
 
-        .cs-tab-btn:hover {
-            border-color: var(--amber);
-            background: var(--bg-subtle);
-        }
-
-        .cs-tab-btn.active {
-            background: var(--charcoal);
-            color: var(--bg-canvas);
-            border-color: var(--charcoal);
-        }
-
-        .cs-tab-btn.active i {
+        .cs-proof-header h4 i {
             color: var(--amber);
         }
 
-        .cs-tab-pane {
-            display: none;
-        }
-
-        .cs-tab-pane.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .cs-proof-img-frame {
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-subtle);
-            overflow: hidden;
             background: #0f172a;
-            box-shadow: var(--shadow-subtle);
-            margin-bottom: 14px;
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .cs-proof-img-frame img {
@@ -157,62 +137,11 @@
         }
 
         .cs-proof-caption {
-            padding: 12px 16px;
-            background: var(--bg-subtle);
-            border-top: 1px solid var(--border-subtle);
+            padding: 12px 18px;
+            background: var(--bg-canvas);
             font-size: 0.88rem;
             color: var(--charcoal-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .cs-proof-caption strong {
-            color: var(--charcoal);
-        }
-
-        .cs-table-container {
-            overflow-x: auto;
-            margin: 18px 0;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border-subtle);
-        }
-
-        .cs-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-            text-align: left;
-        }
-
-        .cs-table th {
-            background: var(--bg-subtle);
-            color: var(--charcoal);
-            font-weight: 700;
-            padding: 12px 14px;
-            border-bottom: 1px solid var(--border-subtle);
-            white-space: nowrap;
-        }
-
-        .cs-table td {
-            padding: 12px 14px;
-            border-bottom: 1px solid var(--border-subtle);
-            color: var(--charcoal-secondary);
-        }
-
-        .cs-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .cs-table tr.winner-row {
-            background: rgba(230, 92, 0, 0.05);
-            font-weight: 600;
-        }
-
-        .cs-table tr.winner-row td {
-            color: var(--charcoal);
+            line-height: 1.5;
         }
 
         .tag-winner {
@@ -221,9 +150,9 @@
             gap: 4px;
             background: var(--amber);
             color: #fff;
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 4px;
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
         }
@@ -234,10 +163,35 @@
             gap: 4px;
             background: #e2e8f0;
             color: #475569;
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 4px;
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 600;
+        }
+
+        .strategy-points-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .strategy-points-list li {
+            position: relative;
+            padding-left: 24px;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--charcoal-secondary);
+        }
+
+        .strategy-points-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--amber);
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -256,11 +210,11 @@
     <!-- Header Section -->
     <header class="detail-header container">
         <div class="cs-hero-badge">
-            <i class="fas fa-chart-line"></i> Meta Ads Campaign &bull; Women's Fashion
+            <i class="fas fa-shopping-bag"></i> Women's Ethnic &amp; Fusion Wear &bull; Durga Puja Campaign
         </div>
         <h1 class="detail-hero-title">Festive Puja Sales &amp; Messenger Acquisition</h1>
         <p class="detail-hero-subtitle">
-            How audience cultural nuance, 6-creative A/B diversification, and full-funnel retargeting generated 421 qualified customer conversations at ৳6.94 CPR for a contemporary kurti &amp; fotua brand.
+            How audience cultural nuance, 6-creative A/B testing, and retargeting generated 421 qualified customer conversations at ৳6.94 CPR for a contemporary kurti &amp; fotua brand.
         </p>
     </header>
 
@@ -277,7 +231,7 @@
             <div class="cs-metric-card">
                 <div class="cs-metric-value">৳6.94</div>
                 <div class="cs-metric-label">Winning CPR (Cost/Msg)</div>
-                <div class="cs-metric-sub">-48% Cheaper Than Static Images</div>
+                <div class="cs-metric-sub">Product Transition Video Reel</div>
             </div>
             <div class="cs-metric-card">
                 <div class="cs-metric-value">৳3,467</div>
@@ -295,47 +249,46 @@
         <section class="detail-card">
             <div class="detail-card-header">
                 <i class="fas fa-exclamation-triangle card-icon"></i>
-                <h3>1. Client Objective &amp; The Starting Problem</h3>
+                <h3>1. Client Objective &amp; The Challenge</h3>
             </div>
             <div class="detail-card-body">
                 <p class="paragraph-lead">
-                    The client sells modern ethnic and western fusion wear for young women (short fotua, stylish kurtis, and contemporary sets). With the <strong>Durga Puja shopping season</strong> approaching, she was running ads by herself but hit a severe roadblock: <strong>messages were costing over ৳10–৳14+ each</strong> with low buying intent.
+                    The client sells modern ethnic fusion wear for young women (short fotua, designer kurtis, and festive sets). With the <strong>Durga Puja shopping season</strong> approaching, she was running ads by herself but faced two critical bottlenecks:
                 </p>
                 <div class="problem-solution-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px;">
                     <div style="background: var(--bg-subtle); padding: 18px; border-radius: var(--radius-sm); border-left: 4px solid #ef4444;">
-                        <h4 style="font-size: 1rem; color: var(--charcoal); margin-bottom: 8px;"><i class="fas fa-times-circle" style="color: #ef4444;"></i> The Bottlenecks</h4>
+                        <h4 style="font-size: 1rem; color: var(--charcoal); margin-bottom: 8px;"><i class="fas fa-times-circle" style="color: #ef4444;"></i> The Challenge</h4>
                         <ul style="font-size: 0.9rem; color: var(--charcoal-secondary); padding-left: 18px; line-height: 1.6;">
-                            <li><strong>Broad Waste:</strong> Ads were showing indiscriminately nationwide where modern short fotua has zero cultural market demand.</li>
-                            <li><strong>Asset Limitation:</strong> Because Puja was already around the corner, the client had no time or budget for an expensive new photoshoot.</li>
-                            <li><strong>Ad Fatigue &amp; High CPR:</strong> Generic model walk videos and static images failed to hook viewers, driving CPR over ৳13+.</li>
+                            <li><strong>High Ineffective Spend:</strong> Messages were costing <strong>over ৳10–৳14+ each</strong> with low buying intent because ads targeted non-buyers.</li>
+                            <li><strong>Content &amp; Time Limitation:</strong> With the festival days away, the client had no budget or time for a new professional photoshoot.</li>
                         </ul>
                     </div>
                     <div style="background: var(--bg-subtle); padding: 18px; border-radius: var(--radius-sm); border-left: 4px solid var(--amber);">
-                        <h4 style="font-size: 1rem; color: var(--charcoal); margin-bottom: 8px;"><i class="fas fa-bullseye" style="color: var(--amber);"></i> The Growth Objective</h4>
+                        <h4 style="font-size: 1rem; color: var(--charcoal); margin-bottom: 8px;"><i class="fas fa-bullseye" style="color: var(--amber);"></i> The Objective</h4>
                         <ul style="font-size: 0.9rem; color: var(--charcoal-secondary); padding-left: 18px; line-height: 1.6;">
-                            <li>Cut Cost Per Messaging Conversation below ৳8 BDT.</li>
-                            <li>Isolate high-converting urban university/college audiences.</li>
-                            <li>Identify the winning creative format through rapid A/B testing and scale it before the Puja festival deadline.</li>
+                            <li>Isolate the right high-intent buyer demographic without ad budget waste.</li>
+                            <li>Test available assets (product transition, model walking, carousel, voiceover) to find and scale the winning creative.</li>
+                            <li>Lower CPR below ৳8 BDT and close maximum direct sales before Puja.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Tactical Execution: Strategy & Creative Engineering -->
+        <!-- 3. Tactical Execution: Strategy & Real Findings -->
         <section class="detail-card">
             <div class="detail-card-header">
                 <i class="fas fa-sliders-h card-icon"></i>
-                <h3>2. Strategic Execution: Cultural Nuance &amp; Creative A/B Testing</h3>
+                <h3>2. Strategic Execution: Cultural Insight &amp; Creative Iteration</h3>
             </div>
             <div class="detail-card-body">
                 <div class="workflow-steps">
                     <div class="step-item">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h3>Cultural &amp; Geographic Audience Segmentation</h3>
+                            <h3>Audience Cultural Research &amp; Geographic Filtering</h3>
                             <p>
-                                Bangladeshi cultural fashion differs drastically across regions. Modern short fotua is predominantly worn by university and college students in major urban centers. I geo-fenced targeting strictly to divisional city metropolitan zones and fed contextual student/campus interest signals to Meta’s algorithm, immediately cutting irrelevant impression waste.
+                                Modern short fotua is not traditionally worn by all women across Bangladesh—it is overwhelmingly preferred by university and college students in urban centers. Based on this cultural insight, I restricted location targeting strictly to major divisional city areas and layered student demographic and campus lifestyle signals to eliminate non-buying audience spend.
                             </p>
                         </div>
                     </div>
@@ -343,186 +296,137 @@
                     <div class="step-item">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h3>Creative Diversification (6-Way Format Test in Broad)</h3>
+                            <h3>A/B Creative Testing (Identifying What Works in Practice)</h3>
                             <p>
-                                Rather than betting the budget on one assumption, I set up a structured creative test with a ৳500/day budget comparing 6 distinct formats:
+                                With limited existing assets, I tested 4 distinct visual variations alongside a carousel ad to see what truly resonates:
                             </p>
-                            <div class="cs-table-container">
-                                <table class="cs-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Creative Tested</th>
-                                            <th>Format</th>
-                                            <th>Spend (BDT)</th>
-                                            <th>Messages</th>
-                                            <th>Cost / Msg</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="winner-row">
-                                            <td><strong>Product transition video ad</strong></td>
-                                            <td>Fast Paced Reel</td>
-                                            <td>৳1,769.91</td>
-                                            <td><strong>255</strong></td>
-                                            <td><strong>৳6.94</strong></td>
-                                            <td><span class="tag-winner"><i class="fas fa-trophy"></i> Scaled Winner</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Model transition video ad</td>
-                                            <td>Hybrid Reel</td>
-                                            <td>৳140.16</td>
-                                            <td>21</td>
-                                            <td>৳6.67</td>
-                                            <td><span class="tag-subdue">Secondary</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Carousel Ad</td>
-                                            <td>Multi-Card</td>
-                                            <td>৳264.84</td>
-                                            <td>25</td>
-                                            <td>৳10.59</td>
-                                            <td><span class="tag-subdue">Baseline</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Model video ad</td>
-                                            <td>Slow Model Walk</td>
-                                            <td>৳249.27</td>
-                                            <td>20</td>
-                                            <td>৳12.46</td>
-                                            <td><span class="tag-subdue">Paused (Fatigued)</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Product Image Ad</td>
-                                            <td>Static Photo</td>
-                                            <td>৳321.82</td>
-                                            <td>24</td>
-                                            <td>৳13.41</td>
-                                            <td><span class="tag-subdue">High CPR (Cut)</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Product video with voice</td>
-                                            <td>Voiceover Feature</td>
-                                            <td>৳85.81</td>
-                                            <td>6</td>
-                                            <td>৳14.30</td>
-                                            <td><span class="tag-subdue">Pivoted to Retarget</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <p style="font-size: 0.9rem; color: var(--charcoal-secondary);">
-                                <strong>Insight:</strong> The energetic <em>Product Transition Video</em> emerged as the undisputed winner, pulling in <strong>255 messages at only ৳6.94</strong>—beating traditional static images by <strong>48% lower cost</strong>.
-                            </p>
+                            <ul class="strategy-points-list">
+                                <li>
+                                    <i class="fas fa-trophy"></i>
+                                    <strong>Product Transition Video Ad:</strong> Clear top performer. High watch time and engagement drove Meta to direct over 50% of the budget here, delivering <strong>255 messages at ৳6.94</strong>.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <strong>Model Transition Video Ad:</strong> Showed strong initial momentum (21 messages at ৳6.67).
+                                </li>
+                                <li>
+                                    <i class="fas fa-pause-circle"></i>
+                                    <strong>Model Walking Video &amp; Static Images:</strong> Slow walking video (৳12.46 CPR) and static product photos (৳13.41 CPR) cost almost double the transition video, proving fast product motion stops the scroll far better than traditional shoots.
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
                     <div class="step-item">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3>Full-Funnel Retargeting (৳250/day Warm Push)</h3>
+                            <h3>Retargeting Strategy with Creative Variations</h3>
                             <p>
-                                For prospects who engaged with the top-of-funnel ads but didn't message right away, I launched a dedicated <strong>Retargeting Ad Set (৳250 daily budget)</strong>. Here, I tested product-showing videos and new music variations to close the sale before Puja. The dedicated retargeting ad generated <strong>35 additional messages at ৳6.75 CPR</strong>, maximizing return from warm traffic.
+                                In the retargeting stage, I created fresh iterations of the winning concept to re-engage warm audiences without fatigue:
                             </p>
+                            <ul class="strategy-points-list">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Produced a product transition version with voiceover highlighting fabric features.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Cut the model footage into energetic transition hooks and tested dynamic background music variations.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    The retargeting ad set generated <strong>57 additional high-intent messages at ৳7.85 CPR</strong> (with the product showing ad converting at ৳6.75).
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Visual Verification Hub: Meta Ads Manager Screenshots -->
+        <!-- 4. Verified Meta Ads Manager Proof (Clean Visual Stream) -->
         <section class="detail-card">
             <div class="detail-card-header">
-                <i class="fas fa-camera card-icon"></i>
-                <h3>3. Verified Meta Ads Manager Proof (Visual Evidence)</h3>
+                <i class="fas fa-shield-alt card-icon"></i>
+                <h3>3. Verified Meta Ads Manager Proof</h3>
             </div>
             <div class="detail-card-body">
                 <p>
-                    Inspect the actual Meta Ads Manager dashboard data for this campaign. Click between the tabs to review the campaign hierarchy, creative A/B testing breakdown, and retargeting performance:
+                    Direct screenshots from the Meta Ads Manager campaign showing ad set hierarchy, individual creative test results, and retargeting performance:
                 </p>
 
-                <div class="cs-tab-container">
-                    <!-- Tab Navigation -->
-                    <div class="cs-tab-buttons">
-                        <button class="cs-tab-btn active" onclick="switchProofTab('tab-ads')">
-                            <i class="fas fa-video"></i> Visual 1: Winning Creatives (A/B Test)
-                        </button>
-                        <button class="cs-tab-btn" onclick="switchProofTab('tab-adsets')">
-                            <i class="fas fa-layer-group"></i> Visual 2: Ad Sets (Broad vs Retargeting)
-                        </button>
-                        <button class="cs-tab-btn" onclick="switchProofTab('tab-retarget')">
-                            <i class="fas fa-redo"></i> Visual 3: Retargeting Ads Breakdown
-                        </button>
-                    </div>
-
-                    <!-- Tab Pane 1: Winning Ads Breakdown (Screenshot 2) -->
-                    <div id="tab-ads" class="cs-tab-pane active">
+                <div class="cs-proof-stack">
+                    <!-- Screenshot 1: Winning Creatives Breakdown -->
+                    <div class="cs-proof-item">
+                        <div class="cs-proof-header">
+                            <h4><i class="fas fa-video"></i> Broad Audience Ad Creatives Breakdown</h4>
+                            <span class="tag-winner"><i class="fas fa-trophy"></i> 255 Messages @ ৳6.94</span>
+                        </div>
                         <div class="cs-proof-img-frame">
                             <img src="assets/campaign-broad-ads-proof.png" alt="Meta Ads Manager Creative Breakdown Screenshot - Product Transition Winning Ad">
                         </div>
                         <div class="cs-proof-caption">
-                            <div>
-                                <strong>Ads Manager Proof: Creative A/B Test</strong> &bull; Shows <em>Product transition video ad</em> generating <strong>255 messages at ৳6.94 CPR</strong> (৳1,769.91 spent) out of 364 total broad messages.
-                            </div>
-                            <span class="tag-winner"><i class="fas fa-check-circle"></i> Verified Data</span>
+                            <strong>Live Ads Manager Breakdown:</strong> Proves the <em>Product transition video ad</em> generated <strong>255 messaging conversations at ৳6.94</strong> (৳1,769.91 spent) out of 364 total broad messages, while static photos and traditional model walk ads had much higher costs (৳12.46 - ৳13.41).
                         </div>
                     </div>
 
-                    <!-- Tab Pane 2: Ad Sets Overview (Screenshot 1) -->
-                    <div id="tab-adsets" class="cs-tab-pane">
+                    <!-- Screenshot 2: Ad Sets Structure -->
+                    <div class="cs-proof-item">
+                        <div class="cs-proof-header">
+                            <h4><i class="fas fa-layer-group"></i> Campaign Structure: Broad vs. Retargeting Ad Sets</h4>
+                            <span class="tag-subdue">৳3,467 Total Spend &bull; 421 Total Results</span>
+                        </div>
                         <div class="cs-proof-img-frame">
                             <img src="assets/campaign-adsets-proof.png" alt="Meta Ads Manager Ad Sets Overview Screenshot - Broad Audience and Retargeting">
                         </div>
                         <div class="cs-proof-caption">
-                            <div>
-                                <strong>Ad Sets Hierarchy:</strong> Broad Audience (৳500/day &rarr; 364 msgs @ ৳8.30) &bull; Retargeting (৳250/day &rarr; 57 msgs @ ৳7.85). Total impressions: <strong>52,541</strong> across <strong>31,510 reach</strong>.
-                            </div>
-                            <span class="tag-subdue">Campaign Budget Split</span>
+                            <strong>Campaign Ad Sets Overview:</strong> Broad Audience (৳500/day budget &rarr; 364 messages @ ৳8.30) paired with a dedicated Retargeting Ad Set (৳250/day budget &rarr; 57 messages @ ৳7.85). Total reach: <strong>31,510 people</strong> with <strong>52,541 impressions</strong>.
                         </div>
                     </div>
 
-                    <!-- Tab Pane 3: Retargeting Ads Breakdown (Screenshot 3) -->
-                    <div id="tab-retarget" class="cs-tab-pane">
+                    <!-- Screenshot 3: Retargeting Ads -->
+                    <div class="cs-proof-item">
+                        <div class="cs-proof-header">
+                            <h4><i class="fas fa-redo"></i> Retargeting Creatives Breakdown</h4>
+                            <span class="tag-winner"><i class="fas fa-fire"></i> Product Showing @ ৳6.75</span>
+                        </div>
                         <div class="cs-proof-img-frame">
                             <img src="assets/campaign-retargeting-ads-proof.png" alt="Meta Ads Manager Retargeting Ads Breakdown Screenshot">
                         </div>
                         <div class="cs-proof-caption">
-                            <div>
-                                <strong>Retargeting Proof:</strong> <em>Product showing video</em> converting warm shoppers with <strong>35 messages at ৳6.75 CPR</strong> during the final Puja countdown.
-                            </div>
-                            <span class="tag-winner"><i class="fas fa-fire"></i> High Intent</span>
+                            <strong>Retargeting Ads Performance:</strong> Demonstrating how product-focused transition variations converted warm shoppers during the final Puja countdown, leading with <strong>35 messages at ৳6.75 CPR</strong>.
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. Future Growth & Strategic Recommendations -->
+        <!-- 5. Strategic Recommendations & Future Scaling -->
         <section class="detail-card">
             <div class="detail-card-header">
                 <i class="fas fa-lightbulb card-icon"></i>
-                <h3>4. Strategic Takeaways &amp; Andromeda Creative Diversification</h3>
+                <h3>4. Strategic Recommendations &amp; Andromeda Creative Diversification</h3>
             </div>
             <div class="detail-card-body">
                 <p class="paragraph-lead">
-                    What this campaign proved beyond the numbers:
+                    Key growth conclusions and recommendations provided to the brand for ongoing scaling:
                 </p>
                 <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 14px;">
                     <div style="background: var(--bg-canvas); border: 1px solid var(--border-subtle); padding: 16px; border-radius: var(--radius-sm);">
                         <strong style="color: var(--charcoal); display: block; margin-bottom: 4px;">
-                            <i class="fas fa-bolt" style="color: var(--amber);"></i> Native Motion Beats Polished Studio Shoots
+                            <i class="fas fa-bolt" style="color: var(--amber);"></i> Native Motion Outperforms Traditional Shoots
                         </strong>
                         <span style="font-size: 0.9rem; color: var(--charcoal-secondary);">
-                            Slow model walking videos look like traditional ads and are skipped instantly. Fast-paced, rhythmic product transitions immediately showcase the dress details and fabric flow within the first 2 seconds, which dramatically increases ThruPlays and drops CPR.
+                            Slow-paced model walking videos mimic traditional studio ads and suffer immediate scroll fatigue. Rhythmic, fast product transitions highlight fabric textures and styling within the opening 2 seconds, which drives higher engagement and significantly lower CPR.
                         </span>
                     </div>
 
                     <div style="background: var(--bg-canvas); border: 1px solid var(--border-subtle); padding: 16px; border-radius: var(--radius-sm);">
                         <strong style="color: var(--charcoal); display: block; margin-bottom: 4px;">
-                            <i class="fas fa-wand-magic-sparkles" style="color: var(--amber);"></i> Scaling Next via Andromeda Creative Diversification
+                            <i class="fas fa-wand-magic-sparkles" style="color: var(--amber);"></i> Scaling via Andromeda Creative Diversification
                         </strong>
                         <span style="font-size: 0.9rem; color: var(--charcoal-secondary);">
-                            To sustain this performance without ad fatigue, I advised the brand to diversify future transition reels using the <em>Andromeda creative framework</em>: showing clothes laid out naturally on green grass, dynamic drop-from-hand reveals, and natural sunlight fabric zooms.
+                            To produce high-performing creative variations on a low production budget, I advised the client to film product transitions across varied organic contexts—such as laying fabrics out naturally on green grass, dynamic drop-from-hand reveals, and direct sunlight detail shots. This satisfies Meta's Andromeda algorithm by diversifying creative signals without needing expensive model shoots.
                         </span>
                     </div>
                 </div>
@@ -541,20 +445,5 @@
 
     </main>
 
-    <!-- JavaScript for Tab Switching -->
-    <script>
-        function switchProofTab(tabId) {
-            // Remove active class from all buttons and panes
-            document.querySelectorAll('.cs-tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.cs-tab-pane').forEach(pane => pane.classList.remove('active'));
-
-            // Activate chosen button and pane
-            const activeBtn = Array.from(document.querySelectorAll('.cs-tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
-            if (activeBtn) activeBtn.classList.add('active');
-
-            const targetPane = document.getElementById(tabId);
-            if (targetPane) targetPane.classList.add('active');
-        }
-    </script>
 </body>
 </html>
