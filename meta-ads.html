@@ -1,15 +1,130 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Ads | Proof & Verification - Rupam Das</title>
-    <meta name="description" content="Technical workflow, implementation breakdown, and verified proof for Meta Ads by Rupam Das.">
+    <title>Meta Ads | Proof &amp; Verification - Rupam Das</title>
+    <meta name="description" content="Technical workflow, implementation breakdown, and verified Ads Manager proof for Meta Ads by Rupam Das.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .cs-proof-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            margin-top: 16px;
+        }
+
+        .cs-proof-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .cs-proof-header {
+            padding: 13px 18px;
+            background: var(--bg-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .cs-proof-header h4 {
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cs-proof-header h4 i {
+            color: var(--amber);
+        }
+
+        .cs-proof-img-frame {
+            background: #0f172a;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .cs-proof-img-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .cs-proof-caption {
+            padding: 12px 18px;
+            background: var(--bg-canvas);
+            font-size: 0.88rem;
+            color: var(--charcoal-secondary);
+            line-height: 1.5;
+        }
+
+        .tag-winner {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--amber);
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .tag-subdue {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.74rem;
+            font-weight: 600;
+        }
+
+        .meta-kpi-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin: 18px 0 24px 0;
+        }
+
+        .meta-kpi-box {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-subtle);
+            border-left: 4px solid var(--amber);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+        }
+
+        .meta-kpi-box strong {
+            display: block;
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--charcoal);
+            line-height: 1.2;
+        }
+
+        .meta-kpi-box span {
+            font-size: 0.8rem;
+            color: var(--charcoal-secondary);
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body class="detail-page-body">
 
@@ -26,10 +141,10 @@
     <!-- Header Section -->
     <header class="detail-header container">
         <div class="detail-hero-badge">
-            <i class="fab fa-facebook-f"></i> Skill Verification
+            <i class="fab fa-facebook-f"></i> Skill Verification &bull; Paid Acquisition
         </div>
         <h1 class="detail-hero-title">Meta Ads</h1>
-        <p class="detail-hero-subtitle">Campaign structure, objective selection, budget scaling (CBO/ABO), and A/B testing.</p>
+        <p class="detail-hero-subtitle">Campaign structure, objective selection, budget scaling, cultural audience research, and creative A/B testing.</p>
     </header>
 
     <!-- Main Content Container -->
@@ -39,10 +154,10 @@
         <section class="detail-card">
             <div class="detail-card-header">
                 <i class="fas fa-bullseye card-icon"></i>
-                <h3>Overview & Core Application</h3>
+                <h3>Overview &amp; Core Application</h3>
             </div>
             <div class="detail-card-body">
-                <p>Building and scaling profitable Meta Ads funnels across Facebook and Instagram with structured TOFU/MOFU/BOFU campaigns and algorithmic budget optimization.</p>
+                <p>I design, launch, and optimize full-funnel Meta Ads campaigns across Facebook and Instagram. Rather than relying on guesswork, I combine cultural audience insights with systematic creative diversification (testing product transitions, static visuals, carousels, and voiceovers) and dedicated retargeting to consistently reduce Cost Per Result (CPR).</p>
             </div>
         </section>
 
@@ -54,66 +169,119 @@
             </div>
             <div class="detail-card-body">
                 <div class="detail-steps-list">
-                <div class="detail-step-item">
-                    <div class="step-dot"></div>
-                    <div class="step-content">
-                        <h4>Campaign Architecture & Objective Mapping</h4>
-                        <p>Selecting Sales/Leads/Messages objectives aligned with conversion goals and account pixel data.</p>
+                    <div class="detail-step-item">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <h4>1. Cultural &amp; Demographic Audience Research</h4>
+                            <p>Analyzing real buyer affinity (such as urban university/college students in divisional city zones) to restrict wasted geographic reach and feed high-intent signals to Meta's algorithm.</p>
+                        </div>
                     </div>
-                </div>                <div class="detail-step-item">
-                    <div class="step-dot"></div>
-                    <div class="step-content">
-                        <h4>Advantage+ & CBO/ABO Budget Scaling</h4>
-                        <p>Distributing budget between testing ad sets (ABO) and scaling winning audiences (CBO / Advantage+ Budget).</p>
+                    <div class="detail-step-item">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <h4>2. Multi-Format Creative A/B Testing</h4>
+                            <p>Testing diverse creative angles simultaneously—fast-paced product transition reels, model walking videos, static images, and carousels—to let real performance data reveal the lowest CPR winner.</p>
+                        </div>
                     </div>
-                </div>                <div class="detail-step-item">
-                    <div class="step-dot"></div>
-                    <div class="step-content">
-                        <h4>Audience Targeting & Exclusions</h4>
-                        <p>Combining broad targeting, layered interests, and custom lookalikes while strictly excluding past 30-day purchasers.</p>
+                    <div class="detail-step-item">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <h4>3. Full-Funnel Budget Allocation (Broad + Retargeting)</h4>
+                            <p>Separating top-of-funnel prospecting (e.g., ৳500/day Broad Audience) from warm bottom-of-funnel retargeting (e.g., ৳250/day Retargeting) with fresh audio and voiceover hooks to close hesitant buyers.</p>
+                        </div>
                     </div>
-                </div>                <div class="detail-step-item">
-                    <div class="step-dot"></div>
-                    <div class="step-content">
-                        <h4>Dynamic Creative & A/B Split Testing</h4>
-                        <p>Running 3:2:2 dynamic creative testing (3 visuals, 2 copies, 2 headlines) to identify top converting ad units.</p>
+                    <div class="detail-step-item">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <h4>4. Andromeda Creative Diversification</h4>
+                            <p>Refreshing winning concepts through varied visual contexts (outdoor grass layouts, hand-drop transitions, feature voiceovers) to scale spend without triggering ad fatigue.</p>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Proof & Verification Section -->
+        <!-- 3. Real Campaign Proof & Verification Section -->
         <section class="detail-card">
             <div class="detail-card-header">
                 <i class="fas fa-shield-alt card-icon"></i>
-                <h3>Campaign Architectures & ROAS Dashboards</h3>
+                <h3>Verified Campaign Proof: Festive Puja Fashion Acquisition</h3>
             </div>
             <div class="detail-card-body">
-                <p class="evidence-intro">Live campaign structure diagrams, budget scaling logs, and Ads Manager performance screenshots.</p>
-                
-                <div class="detail-evidence-grid">
-                    <div class="detail-evidence-card">
-                        <div class="evidence-preview-placeholder">
-                            <i class="fas fa-image placeholder-icon"></i>
-                            <span>Verified Workflow & Execution Screenshot</span>
+                <p class="evidence-intro">
+                    Real Meta Ads Manager execution for a women's contemporary fashion brand (Kurti &amp; Fotua), reducing message cost from <strong>&gt;৳10–৳14 down to ৳6.94</strong> on the winning product transition reel:
+                </p>
+
+                <!-- Quick KPI Strip -->
+                <div class="meta-kpi-strip">
+                    <div class="meta-kpi-box">
+                        <strong>421</strong>
+                        <span>Total Conversations</span>
+                    </div>
+                    <div class="meta-kpi-box">
+                        <strong>৳6.94</strong>
+                        <span>Winning Ad CPR</span>
+                    </div>
+                    <div class="meta-kpi-box">
+                        <strong>৳3,467</strong>
+                        <span>Total Ad Spend</span>
+                    </div>
+                    <div class="meta-kpi-box">
+                        <strong>31,510</strong>
+                        <span>Targeted City Reach</span>
+                    </div>
+                </div>
+
+                <!-- Direct Screenshot Stream -->
+                <div class="cs-proof-stack">
+                    <!-- Screenshot 1 -->
+                    <div class="cs-proof-item">
+                        <div class="cs-proof-header">
+                            <h4><i class="fas fa-video"></i> Creative A/B Testing Breakdown (Broad Audience)</h4>
+                            <span class="tag-winner"><i class="fas fa-trophy"></i> 255 Messages @ ৳6.94</span>
                         </div>
-                        <div class="evidence-meta">
-                            <h4>Standard Operating Procedure (SOP)</h4>
-                            <p>Structured documentation and repeatable execution model.</p>
+                        <div class="cs-proof-img-frame">
+                            <img src="assets/campaign-broad-ads-proof.png" alt="Meta Ads Manager Creative Breakdown Screenshot">
+                        </div>
+                        <div class="cs-proof-caption">
+                            <strong>Creative Test Result:</strong> The <em>Product transition video ad</em> captured <strong>255 messaging conversations at ৳6.94 CPR</strong>, decisively outperforming static product photos (৳13.41) and traditional model walking videos (৳12.46).
                         </div>
                     </div>
 
-                    <div class="detail-evidence-card">
-                        <div class="evidence-preview-placeholder">
-                            <i class="fas fa-chart-pie placeholder-icon"></i>
-                            <span>Performance Metrics & Dashboard Proof</span>
+                    <!-- Screenshot 2 -->
+                    <div class="cs-proof-item">
+                        <div class="cs-proof-header">
+                            <h4><i class="fas fa-layer-group"></i> Campaign Structure: Broad vs. Retargeting Ad Sets</h4>
+                            <span class="tag-subdue">421 Total Conversations &bull; 52,541 Impressions</span>
                         </div>
-                        <div class="evidence-meta">
-                            <h4>Live Outcome Verification</h4>
-                            <p>Demonstrated impact on campaign efficiency and target KPIs.</p>
+                        <div class="cs-proof-img-frame">
+                            <img src="assets/campaign-adsets-proof.png" alt="Meta Ads Manager Ad Sets Overview Screenshot">
+                        </div>
+                        <div class="cs-proof-caption">
+                            <strong>Ad Set Architecture:</strong> Structured with a ৳500/day Broad prospecting ad set (364 messages @ ৳8.30) and a ৳250/day Retargeting ad set (57 messages @ ৳7.85).
                         </div>
                     </div>
+
+                    <!-- Screenshot 3 -->
+                    <div class="cs-proof-item">
+                        <div class="cs-proof-header">
+                            <h4><i class="fas fa-redo"></i> Warm Audience Retargeting Performance</h4>
+                            <span class="tag-winner"><i class="fas fa-fire"></i> Converting @ ৳6.75 CPR</span>
+                        </div>
+                        <div class="cs-proof-img-frame">
+                            <img src="assets/campaign-retargeting-ads-proof.png" alt="Meta Ads Manager Retargeting Ads Breakdown Screenshot">
+                        </div>
+                        <div class="cs-proof-caption">
+                            <strong>Retargeting Execution:</strong> Re-engaging warm viewers with product-showing variations and audio twists, generating <strong>35 messages at ৳6.75 CPR</strong>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Link to Full Case Study -->
+                <div style="margin-top: 22px; text-align: right;">
+                    <a href="case-study-fashion.html" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+                        <i class="fas fa-book-open"></i> Read Full Strategic Case Study &rarr;
+                    </a>
                 </div>
             </div>
         </section>
@@ -124,7 +292,7 @@
                 <i class="fas fa-paper-plane"></i> Discuss a Project
             </a>
             <a href="index.html#skills" class="btn-secondary">
-                <i class="fas fa-th-large"></i> Explore Other Skills & Tools
+                <i class="fas fa-th-large"></i> Explore Other Skills &amp; Tools
             </a>
         </div>
 
@@ -133,7 +301,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 <strong>Rupam Das</strong> &bull; Performance Marketer & Meta Ads Specialist</p>
+            <p>&copy; 2026 <strong>Rupam Das</strong> &bull; Performance Marketer &amp; Meta Ads Specialist</p>
             <p><a href="index.html">Main Portfolio</a> &bull; <a href="client.html">Client Growth Hub</a></p>
         </div>
     </footer>
