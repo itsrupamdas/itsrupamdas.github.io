@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website, Content &amp; Catalog Sales Ads | Case Study - Rupam Das</title>
+    <meta name="description" content="End-to-end e-commerce case study for a Pet Shop: WordPress website & landing page via vibe coding, strategic content calendar with AI creative execution, Meta Pixel setup, and Catalog Sales ads.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Brand Stylesheet (60-30-10 System) -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cs-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            background: rgba(230, 92, 0, 0.12);
+            color: var(--amber-dark);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        /* Executive Project Snapshot Strip */
+        .cs-snapshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+            margin: 24px 0 32px 0;
+        }
+
+        .cs-snapshot-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 18px 20px;
+            box-shadow: var(--shadow-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cs-snapshot-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--amber);
+        }
+
+        .cs-snapshot-label {
+            font-size: 0.76rem;
+            color: var(--charcoal-secondary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .cs-snapshot-value {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--charcoal);
+            line-height: 1.3;
+        }
+
+        .cs-snapshot-sub {
+            font-size: 0.8rem;
+            color: var(--amber-dark);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Execution Pillar + Proof Slot Layout */
+        .pillar-block {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .pillar-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .pillar-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .pillar-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pillar-num {
+            width: 34px;
+            height: 34px;
+            border-radius: var(--radius-full);
+            background: var(--charcoal);
+            color: var(--amber);
+            font-weight: 800;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .pillar-title-group h4 {
+            font-size: 1.12rem;
+            font-weight: 800;
+            color: var(--charcoal);
+            margin: 0;
+        }
+
+        .pillar-tag {
+            background: rgba(230, 92, 0, 0.12);
+            color: var(--amber-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .pillar-desc {
+            font-size: 0.94rem;
+            color: var(--charcoal-secondary);
+            line-height: 1.65;
+            margin-bottom: 14px;
+        }
+
+        .pillar-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 18px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pillar-bullets li {
+            position: relative;
+            padding-left: 22px;
+            font-size: 0.9rem;
+            color: var(--charcoal-secondary);
+            line-height: 1.55;
+        }
+
+        .pillar-bullets li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--amber);
+            font-size: 0.85rem;
+        }
+
+        /* Proof Slot Container (Ready for Screen Recording or Screenshot) */
+        .proof-slot-frame {
+            background: var(--bg-card);
+            border: 1.5px dashed var(--border-subtle);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .proof-slot-bar {
+            background: var(--bg-subtle);
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+
+        .proof-slot-bar span i {
+            color: var(--amber);
+            margin-right: 6px;
+        }
+
+        .proof-slot-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: var(--charcoal);
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .proof-slot-body {
+            padding: 28px 20px;
+            text-align: center;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 160px;
+        }
+
+        .proof-slot-body i {
+            font-size: 2rem;
+            color: var(--amber);
+            opacity: 0.85;
+        }
+
+        .proof-slot-body strong {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+        }
+
+        .proof-slot-body p {
+            font-size: 0.84rem;
+            color: var(--charcoal-secondary);
+            max-width: 520px;
+            margin: 0;
+        }
+
+        /* Value Delivered Comparison Grid */
+        .scope-comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-top: 14px;
+        }
+
+        .scope-box {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+        }
+
+        .scope-box.extra-mile {
+            border-left: 4px solid var(--amber);
+            background: rgba(230, 92, 0, 0.03);
+        }
+
+        .scope-box h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--charcoal);
+            margin: 0 0 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .scope-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .scope-list li {
+            font-size: 0.9rem;
+            color: var(--charcoal-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+
+        .scope-list li i {
+            color: var(--amber);
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="detail-page-body">
+
+    <!-- Top Sticky Return Bar -->
+    <div class="detail-navigation-bar">
+        <div class="container detail-nav-container">
+            <a href="index.html#projects" class="btn-back-portfolio">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+            <span class="detail-nav-badge"><i class="fas fa-check-double"></i> Case Study 01 &bull; Pet Shop</span>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="detail-header container">
+        <div class="cs-hero-badge">
+            <i class="fas fa-paw"></i> Case Study 01 &bull; Pet Shop E-Commerce
+        </div>
+        <h1 class="detail-hero-title">E-Commerce Website, Content &amp; Catalog Sales Ads</h1>
+        <p class="detail-hero-subtitle">
+            End-to-end digital growth foundation for a local Pet Shop: mobile-first WordPress store &amp; landing page built via vibe coding, strategic content calendar executed with AI visuals &amp; videos, Meta Pixel tracking, and E-Commerce Catalog Sales campaigns.
+        </p>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container detail-main-content">
+
+        <!-- 1. Executive Project Snapshot -->
+        <div class="cs-snapshot-grid">
+            <div class="cs-snapshot-card">
+                <div class="cs-snapshot-label">Client Industry</div>
+                <div class="cs-snapshot-value">Pet Shop (Cat Food &amp; Gear)</div>
+                <div class="cs-snapshot-sub">Physical Store + Nationwide E-Commerce</div>
+            </div>
+            <div class="cs-snapshot-card">
+                <div class="cs-snapshot-label">Web &amp; Tracking</div>
+                <div class="cs-snapshot-value">WordPress + Meta Pixel</div>
+                <div class="cs-snapshot-sub">Vibe-Coded Mobile UX &amp; Landing Page</div>
+            </div>
+            <div class="cs-snapshot-card">
+                <div class="cs-snapshot-label">Content Production</div>
+                <div class="cs-snapshot-value">Strategic Calendar + AI</div>
+                <div class="cs-snapshot-sub">Framework-Planned &bull; AI Video &amp; Design</div>
+            </div>
+            <div class="cs-snapshot-card">
+                <div class="cs-snapshot-label">Paid Acquisition</div>
+                <div class="cs-snapshot-value">Catalog &amp; Sales Campaign</div>
+                <div class="cs-snapshot-sub">10-Card Carousels, Reels &amp; Direct Checkout</div>
+            </div>
+        </div>
+
+        <!-- 2. The Business Problem & Growth Objective -->
+        <section class="detail-card">
+            <div class="detail-card-header">
+                <i class="fas fa-bullseye card-icon"></i>
+                <h3>1. The Business Challenge &amp; Objective</h3>
+            </div>
+            <div class="detail-card-body">
+                <p class="paragraph-lead">
+                    The client operates a physical and online Pet Shop specializing in imported cat food, treats, litter, and travel carriers. While they had strong product inventory, their digital presence lacked the structure needed to convert cold social media traffic into consistent online orders.
+                </p>
+                <div class="problem-solution-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px;">
+                    <div style="background: var(--bg-subtle); padding: 18px; border-radius: var(--radius-sm); border-left: 4px solid #ef4444;">
+                        <h4 style="font-size: 1rem; color: var(--charcoal); margin-bottom: 8px;"><i class="fas fa-times-circle" style="color: #ef4444;"></i> Starting Bottlenecks</h4>
+                        <ul style="font-size: 0.9rem; color: var(--charcoal-secondary); padding-left: 18px; line-height: 1.6;">
+                            <li><strong>High Website Friction:</strong> The existing WordPress store was cluttered and difficult for mobile shoppers to browse or add items to cart.</li>
+                            <li><strong>Zero Conversion Tracking:</strong> No Meta Pixel or funnel event tracking was in place to measure add-to-carts or purchases.</li>
+                            <li><strong>Inconsistent Content &amp; Ad Assets:</strong> Lacked a structured monthly posting plan and had no high-converting video reels or product carousels for paid ads.</li>
+                        </ul>
+                    </div>
+                    <div style="background: var(--bg-subtle); padding: 18px; border-radius: var(--radius-sm); border-left: 4px solid var(--amber);">
+                        <h4 style="font-size: 1rem; color: var(--charcoal); margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: var(--amber);"></i> Month-1 Growth Objective</h4>
+                        <ul style="font-size: 0.9rem; color: var(--charcoal-secondary); padding-left: 18px; line-height: 1.6;">
+                            <li>Build a fast, mobile-friendly WordPress storefront and high-converting product landing page.</li>
+                            <li>Plan a 30-day content calendar using a structured framework and produce all graphic and video assets using AI.</li>
+                            <li>Deploy Meta Pixel tracking and launch structured E-Commerce Catalog &amp; Sales campaigns.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The 4-Pillar Execution System (With Proof Containers) -->
+        <section class="detail-card">
+            <div class="detail-card-header">
+                <i class="fas fa-layer-group card-icon"></i>
+                <h3>2. End-to-End Execution &amp; Proof</h3>
+            </div>
+            <div class="detail-card-body">
+
+                <!-- Pillar 01: Content Calendar + AI Execution -->
+                <div class="pillar-block">
+                    <div class="pillar-header">
+                        <div class="pillar-title-group">
+                            <span class="pillar-num">01</span>
+                            <h4>Strategic Content Calendar &amp; AI Creative Execution</h4>
+                        </div>
+                        <span class="pillar-tag">Strategy + AI Production</span>
+                    </div>
+                    <p class="pillar-desc">
+                        I planned the entire monthly content calendar through my own <strong>2-Tab Strategic Framework and brainstorming</strong>—mapping out product showcases, cat nutrition tips, authenticity trust seals, and interactive routines. Once the strategy and calendar were locked in, I <strong>executed the content production using AI</strong>:
+                    </p>
+                    <ul class="pillar-bullets">
+                        <li><i class="fas fa-check"></i> <strong>Framework-Driven Calendar Planning:</strong> Brainstormed and scheduled 40+ targeted posts across October &amp; November balancing evergreen education, product rotations, and seasonal sales sprints.</li>
+                        <li><i class="fas fa-check"></i> <strong>Graphic Design &amp; Carousels:</strong> Designed branded post graphics, trust-seal banners, and 10-card product comparison carousels.</li>
+                        <li><i class="fas fa-check"></i> <strong>AI Video Generation &amp; Editing:</strong> Produced and edited 9:16 vertical AI video ads (including 3D/cartoon space-capsule carrier reels, safe vet trip hooks, and custom voiceovers).</li>
+                    </ul>
+
+                    <!-- Proof Slot 01 -->
+                    <div class="proof-slot-frame" id="proof-calendar-ai">
+                        <div class="proof-slot-bar">
+                            <span><i class="fas fa-film"></i> Proof 01: Content Calendar &amp; AI Video / Graphic Execution</span>
+                            <span class="proof-slot-badge">Screen Recording / Visuals</span>
+                        </div>
+                        <div class="proof-slot-body">
+                            <i class="fas fa-photo-film"></i>
+                            <strong>Verification Slot: Master Content Calendar &amp; AI-Executed Creatives</strong>
+                            <p>Screen recording showcasing the 2-Tab Content Calendar spreadsheet alongside the AI-generated video reels and designed social graphics.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 02: WordPress Website & Landing Page Design (Vibe Coding) -->
+                <div class="pillar-block">
+                    <div class="pillar-header">
+                        <div class="pillar-title-group">
+                            <span class="pillar-num">02</span>
+                            <h4>WordPress Website &amp; Landing Page Design (Vibe Coding)</h4>
+                        </div>
+                        <span class="pillar-tag">Web UX &amp; CRO</span>
+                    </div>
+                    <p class="pillar-desc">
+                        To ensure paid ad traffic converts into actual orders instead of bouncing, I rebuilt and customized the client's WordPress/WooCommerce storefront and product landing pages using <strong>vibe coding</strong>:
+                    </p>
+                    <ul class="pillar-bullets">
+                        <li><i class="fas fa-check"></i> <strong>Mobile-First Storefront Redesign:</strong> Engineered clean responsive headers, category grids, and product cards tailored for mobile pet parents.</li>
+                        <li><i class="fas fa-check"></i> <strong>High-Converting Product Landing Pages:</strong> Structured dedicated landing views for hero products (10 styles of Cat Travel Carriers &amp; Backpacks) with clear pricing, discount badges, and instant buy actions.</li>
+                        <li><i class="fas fa-check"></i> <strong>Frictionless Slide-Out Mini-Cart &amp; Checkout:</strong> Streamlined the cart drawer and Cash-on-Delivery checkout flow so customers can complete orders in seconds.</li>
+                    </ul>
+
+                    <!-- Proof Slot 02 -->
+                    <div class="proof-slot-frame" id="proof-website-ux">
+                        <div class="proof-slot-bar">
+                            <span><i class="fas fa-laptop-code"></i> Proof 02: WordPress Store &amp; Landing Page Walkthrough (Vibe Coding)</span>
+                            <span class="proof-slot-badge">Screen Recording</span>
+                        </div>
+                        <div class="proof-slot-body">
+                            <i class="fas fa-desktop"></i>
+                            <strong>Verification Slot: Live Website &amp; Mobile Landing Page UX</strong>
+                            <p>Screen recording demonstrating the custom-coded mobile and desktop WordPress storefront, product landing pages, and slide-out cart experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 03: Website Tracking & Meta Pixel Setup -->
+                <div class="pillar-block">
+                    <div class="pillar-header">
+                        <div class="pillar-title-group">
+                            <span class="pillar-num">03</span>
+                            <h4>Website Tracking &amp; Meta Pixel Setup</h4>
+                        </div>
+                        <span class="pillar-tag">Data &amp; Attribution</span>
+                    </div>
+                    <p class="pillar-desc">
+                        Connected the WordPress e-commerce store to Meta's tracking ecosystem so every visitor action is captured accurately for algorithmic ad optimization and retargeting:
+                    </p>
+                    <ul class="pillar-bullets">
+                        <li><i class="fas fa-check"></i> <strong>Standard E-Commerce Funnel Events:</strong> Configured and verified <code>PageView</code>, <code>ViewContent</code>, <code>AddToCart</code>, <code>InitiateCheckout</code>, and <code>Purchase</code> events.</li>
+                        <li><i class="fas fa-check"></i> <strong>Catalog Product ID Matching:</strong> Ensured product page visits pass dynamic content IDs and values back to Meta Events Manager for dynamic retargeting.</li>
+                    </ul>
+
+                    <!-- Proof Slot 03 -->
+                    <div class="proof-slot-frame" id="proof-pixel-tracking">
+                        <div class="proof-slot-bar">
+                            <span><i class="fas fa-tag"></i> Proof 03: Meta Pixel &amp; Website Event Tracking Verification</span>
+                            <span class="proof-slot-badge">Screen Recording / Screenshot</span>
+                        </div>
+                        <div class="proof-slot-body">
+                            <i class="fas fa-chart-network"></i>
+                            <strong>Verification Slot: Pixel Helper &amp; Events Manager Setup</strong>
+                            <p>Screen recording or screenshot verifying active Meta Pixel events firing across product pages, cart drawer, and checkout.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 04: E-Commerce Catalog Sales Campaign -->
+                <div class="pillar-block">
+                    <div class="pillar-header">
+                        <div class="pillar-title-group">
+                            <span class="pillar-num">04</span>
+                            <h4>E-Commerce Sales &amp; Catalog Ad Campaign</h4>
+                        </div>
+                        <span class="pillar-tag">Meta Ads Execution</span>
+                    </div>
+                    <p class="pillar-desc">
+                        With the website, landing pages, and pixel ready, I architected and launched structured Meta Ads campaigns designed to drive direct e-commerce catalog sales and high-intent inquiries:
+                    </p>
+                    <ul class="pillar-bullets">
+                        <li><i class="fas fa-check"></i> <strong>10-Card "Choose Your Style" Catalog Carousel:</strong> Mapped 10 distinct pet carrier styles—each with custom pricing headlines, savings tags, and direct product landing page URLs.</li>
+                        <li><i class="fas fa-check"></i> <strong>Multi-Format Creative Testing:</strong> Paired 10 standalone static product ads and AI-generated 9:16 vertical video reels to capture both cold impulse buyers and comparison shoppers.</li>
+                        <li><i class="fas fa-check"></i> <strong>Local &amp; Nationwide Audience Structure:</strong> Targeted cat parents in high-converting Dhaka zones alongside nationwide Cash-on-Delivery buyers, backed by warm retargeting.</li>
+                    </ul>
+
+                    <!-- Proof Slot 04 -->
+                    <div class="proof-slot-frame" id="proof-catalog-ads">
+                        <div class="proof-slot-bar">
+                            <span><i class="fas fa-bullhorn"></i> Proof 04: Meta Ads Manager — E-Commerce Sales &amp; Catalog Campaign</span>
+                            <span class="proof-slot-badge">Screen Recording / Screenshot</span>
+                        </div>
+                        <div class="proof-slot-body">
+                            <i class="fas fa-chart-line"></i>
+                            <strong>Verification Slot: Live Campaign Structure &amp; Ad Creatives</strong>
+                            <p>Screen recording or screenshot from Meta Ads Manager showing the E-Commerce Sales / Catalog campaign setup, 10-card carousel, and ad performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Ownership & Value Delivered Summary -->
+        <section class="detail-card">
+            <div class="detail-card-header">
+                <i class="fas fa-award card-icon"></i>
+                <h3>3. Ownership Mindset: Contracted Scope vs. Extra Value Delivered</h3>
+            </div>
+            <div class="detail-card-body">
+                <p>
+                    In the first month, our primary objective was to build the complete marketing and e-commerce foundation within a lean startup budget. Rather than limiting my work to basic ad setup, I took full ownership of the funnel:
+                </p>
+
+                <div class="scope-comparison-grid">
+                    <div class="scope-box">
+                        <h4><i class="fas fa-clipboard-check" style="color: var(--charcoal);"></i> Core Committed Deliverables</h4>
+                        <ul class="scope-list">
+                            <li><i class="fas fa-check-circle"></i> <span><strong>Content Strategy &amp; Posting Plan:</strong> Brainstormed and built the master monthly content calendar.</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span><strong>Website Tracking Setup:</strong> Implemented Meta Pixel and conversion event tracking.</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span><strong>Meta Ad Campaign Management:</strong> Set up and managed the Facebook &amp; Instagram ad campaigns.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="scope-box extra-mile">
+                        <h4><i class="fas fa-rocket" style="color: var(--amber);"></i> Proactive Extra Value Added</h4>
+                        <ul class="scope-list">
+                            <li><i class="fas fa-plus-circle"></i> <span><strong>Full Website &amp; Mobile UX Redesign (Vibe Coding):</strong> Rebuilt the WordPress storefront and landing pages so customers can order effortlessly on mobile.</span></li>
+                            <li><i class="fas fa-plus-circle"></i> <span><strong>Custom Ad &amp; Post Graphic Design:</strong> Designed 20+ static &amp; carousel ad creatives and social posts from scratch.</span></li>
+                            <li><i class="fas fa-plus-circle"></i> <span><strong>AI Video Ad Production:</strong> Scripted, generated, and edited custom 9:16 AI video reels for ads and organic reach.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation Bar -->
+        <div class="detail-navigation-bar">
+            <a href="index.html#projects" class="btn-back-portfolio">
+                <i class="fas fa-arrow-left"></i> Back to All Projects
+            </a>
+            <a href="client.html#audit" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.9rem;">
+                <i class="fas fa-calendar-check"></i> Request a Free Growth Audit
+            </a>
+        </div>
+
+    </main>
+
+</body>
+</html>
