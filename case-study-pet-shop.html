@@ -597,6 +597,61 @@
             margin: 0;
             line-height: 1.45;
         }
+
+        /* Device sub-switcher for PDP */
+        .pdp-toggle-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .pdp-device-pane {
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .proof-showcase-container {
+                padding: 16px 12px;
+            }
+            .proof-tab-bar {
+                gap: 6px;
+            }
+            .proof-tab-btn {
+                padding: 7px 12px;
+                font-size: 0.8rem;
+            }
+            .mockup-header {
+                padding: 8px 12px;
+                font-size: 0.72rem;
+            }
+            .mockup-address-bar {
+                font-size: 0.7rem;
+                padding: 3px 8px;
+                max-width: 100%;
+            }
+            .mockup-img-wrap-mobile {
+                padding: 12px 0;
+            }
+            .mockup-img-wrap-mobile img {
+                max-width: 100%;
+                border-width: 2px;
+            }
+            .video-reel-grid {
+                grid-template-columns: 1fr;
+            }
+            .graphics-strip-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 10px;
+            }
+            .ux-features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="detail-page-body">
@@ -1006,6 +1061,42 @@
                                     </div>
                                     <div class="graphic-card">
                                         <div class="graphic-card-thumb">
+                                            <img src="assets/pet-shop/ad_carousel_moorpet.png" alt="Luxury Explorer Carrier Card" loading="lazy">
+                                        </div>
+                                        <div class="graphic-card-label">
+                                            Luxury Explorer Carrier
+                                            <span>Card 06 &bull; Direct Landing CTA</span>
+                                        </div>
+                                    </div>
+                                    <div class="graphic-card">
+                                        <div class="graphic-card-thumb">
+                                            <img src="assets/pet-shop/ad_carousel_canvas_jeans.png" alt="Classic Canvas Capsule Card" loading="lazy">
+                                        </div>
+                                        <div class="graphic-card-label">
+                                            Classic Canvas Capsule
+                                            <span>Card 07 &bull; Direct Landing CTA</span>
+                                        </div>
+                                    </div>
+                                    <div class="graphic-card">
+                                        <div class="graphic-card-thumb">
+                                            <img src="assets/pet-shop/ad_carousel_hard_crate_deluxe.png" alt="Deluxe Hard Airline Crate Card" loading="lazy">
+                                        </div>
+                                        <div class="graphic-card-label">
+                                            Deluxe Hard Airline Crate
+                                            <span>Card 08 &bull; Direct Landing CTA</span>
+                                        </div>
+                                    </div>
+                                    <div class="graphic-card">
+                                        <div class="graphic-card-thumb">
+                                            <img src="assets/pet-shop/ad_carousel_crate_classic.png" alt="Vet-Safe Portable Crate Card" loading="lazy">
+                                        </div>
+                                        <div class="graphic-card-label">
+                                            Vet-Safe Portable Crate
+                                            <span>Card 09 &bull; Direct Landing CTA</span>
+                                        </div>
+                                    </div>
+                                    <div class="graphic-card">
+                                        <div class="graphic-card-thumb">
                                             <img src="assets/pet-shop/ad_carousel_ufo_3in1.png" alt="3-in-1 UFO Carrier Bed Card" loading="lazy">
                                         </div>
                                         <div class="graphic-card-label">
@@ -1141,23 +1232,54 @@
 
                             <!-- View 3: Carrier Product Landing Page (PDP) -->
                             <div id="ux-dt-pdp" class="ux-pane" style="display: none;">
-                                <div class="mockup-window">
-                                    <div class="mockup-header">
-                                        <div class="mockup-dots">
-                                            <span class="mockup-dot dot-red"></span>
-                                            <span class="mockup-dot dot-yellow"></span>
-                                            <span class="mockup-dot dot-green"></span>
+                                <div class="proof-tab-bar pdp-toggle-bar">
+                                    <button class="proof-tab-btn active" id="btn-pdp-dt" onclick="switchPdpDevice('dt', this)">
+                                        <i class="fas fa-desktop"></i> Desktop PDP (1440px)
+                                    </button>
+                                    <button class="proof-tab-btn" id="btn-pdp-mb" onclick="switchPdpDevice('mb', this)">
+                                        <i class="fas fa-mobile-alt"></i> Mobile PDP (375px)
+                                    </button>
+                                </div>
+                                <div id="pdp-view-dt" class="pdp-device-pane" style="display: block;">
+                                    <div class="mockup-window">
+                                        <div class="mockup-header">
+                                            <div class="mockup-dots">
+                                                <span class="mockup-dot dot-red"></span>
+                                                <span class="mockup-dot dot-yellow"></span>
+                                                <span class="mockup-dot dot-green"></span>
+                                            </div>
+                                            <div class="mockup-address-bar">
+                                                <i class="fas fa-lock"></i> https://petshop-demo.com/product/breathable-capsule-pet-carrier/
+                                            </div>
+                                            <span>Desktop PDP &bull; 1440px</span>
                                         </div>
-                                        <div class="mockup-address-bar">
-                                            <i class="fas fa-lock"></i> https://petshop-demo.com/product/breathable-capsule-pet-carrier/
+                                        <div class="mockup-img-wrap">
+                                            <img src="assets/pet-shop/live_dt_pdp_perfect.png" alt="Carrier Product Landing Page Desktop Screenshot" loading="lazy">
                                         </div>
-                                        <span>High-Conversion PDP</span>
+                                        <div class="proof-caption-box">
+                                            <strong>Product Landing Page (Desktop View):</strong> Above-the-fold dynamic price discount display, real-time color swatch selection, stock availability counter, and a high-contrast <em>"ক্যাশ অন ডেলিভারিতে অর্ডার করুন"</em> (Order via COD) primary CTA button. Includes live mobile PDP verification alongside desktop.
+                                        </div>
                                     </div>
-                                    <div class="mockup-img-wrap">
-                                        <img src="assets/pet-shop/live_dt_pdp_perfect.png" alt="Carrier Product Landing Page Desktop Screenshot" loading="lazy">
-                                    </div>
-                                    <div class="proof-caption-box">
-                                        <strong>Product Landing Page (PDP) &mdash; Built for Direct Sales:</strong> Above-the-fold dynamic price discount display, real-time color swatch selection, stock availability counter, and a high-contrast <em>"ক্যাশ অন ডেলিভারিতে অর্ডার করুন"</em> (Order via COD) primary CTA button. Includes live mobile PDP verification alongside desktop.
+                                </div>
+                                <div id="pdp-view-mb" class="pdp-device-pane" style="display: none;">
+                                    <div class="mockup-window">
+                                        <div class="mockup-header">
+                                            <div class="mockup-dots">
+                                                <span class="mockup-dot dot-red"></span>
+                                                <span class="mockup-dot dot-yellow"></span>
+                                                <span class="mockup-dot dot-green"></span>
+                                            </div>
+                                            <div class="mockup-address-bar">
+                                                <i class="fas fa-lock"></i> https://petshop-demo.com/product/breathable-capsule-pet-carrier/ &bull; Mobile View
+                                            </div>
+                                            <span>Mobile PDP &bull; 375px</span>
+                                        </div>
+                                        <div class="mockup-img-wrap-mobile">
+                                            <img src="assets/pet-shop/live_mb_pdp.png" alt="Carrier Product Landing Page Mobile Screenshot" loading="lazy">
+                                        </div>
+                                        <div class="proof-caption-box">
+                                            <strong>Product Landing Page (Mobile View):</strong> 100vw responsive mobile view with thumb-accessible sticky buy button, instant variant radio taps, and zero layout shift.
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="ux-features-grid">
@@ -1186,11 +1308,11 @@
                                             <span class="mockup-dot dot-green"></span>
                                         </div>
                                         <div class="mockup-address-bar">
-                                            <i class="fas fa-lock"></i> https://petshop-demo.com/ &bull; Slide-Out Cart Drawer Active
+                                            <i class="fas fa-lock"></i> https://petshop-demo.com/ &bull; Mobile Slide-Out Cart Drawer Active
                                         </div>
-                                        <span>Instant AJAX Cart</span>
+                                        <span>Mobile AJAX Cart</span>
                                     </div>
-                                    <div class="mockup-img-wrap">
+                                    <div class="mockup-img-wrap-mobile">
                                         <img src="assets/pet-shop/live_verified_drawer_fixed.png" alt="Slide-Out Mini-Cart Drawer Screenshot" loading="lazy">
                                     </div>
                                     <div class="proof-caption-box">
@@ -1293,15 +1415,15 @@
             document.querySelectorAll('.cal-pane').forEach(function(pane) {
                 pane.style.display = 'none';
             });
-            document.querySelectorAll('#proof-calendar-ai .proof-tab-bar .proof-tab-btn').forEach(function(b) {
-                b.classList.remove('active');
-            });
+            if (btn && btn.parentElement) {
+                btn.parentElement.querySelectorAll('.proof-tab-btn').forEach(function(b) {
+                    b.classList.remove('active');
+                });
+                btn.classList.add('active');
+            }
             var target = document.getElementById(tabId);
             if (target) {
                 target.style.display = 'block';
-            }
-            if (btn) {
-                btn.classList.add('active');
             }
         }
 
@@ -1309,18 +1431,15 @@
             document.querySelectorAll('.grp-pane').forEach(function(pane) {
                 pane.style.display = 'none';
             });
-            var tabContainer = btn ? btn.parentElement : null;
-            if (tabContainer) {
-                tabContainer.querySelectorAll('.proof-tab-btn').forEach(function(b) {
+            if (btn && btn.parentElement) {
+                btn.parentElement.querySelectorAll('.proof-tab-btn').forEach(function(b) {
                     b.classList.remove('active');
                 });
+                btn.classList.add('active');
             }
             var target = document.getElementById(tabId);
             if (target) {
                 target.style.display = 'block';
-            }
-            if (btn) {
-                btn.classList.add('active');
             }
         }
 
@@ -1328,14 +1447,32 @@
             document.querySelectorAll('.ux-pane').forEach(function(pane) {
                 pane.style.display = 'none';
             });
-            document.querySelectorAll('#proof-website-ux .proof-tab-bar .proof-tab-btn').forEach(function(b) {
-                b.classList.remove('active');
-            });
+            if (btn && btn.parentElement) {
+                btn.parentElement.querySelectorAll('.proof-tab-btn').forEach(function(b) {
+                    b.classList.remove('active');
+                });
+                btn.classList.add('active');
+            }
             var target = document.getElementById(viewId);
             if (target) {
                 target.style.display = 'block';
             }
-            if (btn) {
+        }
+
+        function switchPdpDevice(device, btn) {
+            var dtPane = document.getElementById('pdp-view-dt');
+            var mbPane = document.getElementById('pdp-view-mb');
+            if (device === 'dt') {
+                if (dtPane) dtPane.style.display = 'block';
+                if (mbPane) mbPane.style.display = 'none';
+            } else {
+                if (dtPane) dtPane.style.display = 'none';
+                if (mbPane) mbPane.style.display = 'block';
+            }
+            if (btn && btn.parentElement) {
+                btn.parentElement.querySelectorAll('.proof-tab-btn').forEach(function(b) {
+                    b.classList.remove('active');
+                });
                 btn.classList.add('active');
             }
         }
