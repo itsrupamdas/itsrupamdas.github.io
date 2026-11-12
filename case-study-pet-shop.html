@@ -614,42 +614,101 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        .proof-tab-btn:focus-visible {
+            outline: 2px solid var(--amber);
+            outline-offset: 2px;
+        }
+
         @media (max-width: 768px) {
+            .detail-card {
+                padding: 18px 12px;
+            }
+            .detail-card-body {
+                padding: 16px 10px;
+            }
+            .pillar-block {
+                padding: 14px 10px;
+                margin-bottom: 16px;
+            }
             .proof-showcase-container {
-                padding: 16px 12px;
+                padding: 12px 8px;
             }
             .proof-tab-bar {
                 gap: 6px;
             }
             .proof-tab-btn {
-                padding: 7px 12px;
+                padding: 8px 12px;
                 font-size: 0.8rem;
             }
             .mockup-header {
                 padding: 8px 12px;
                 font-size: 0.72rem;
+                flex-wrap: wrap;
             }
             .mockup-address-bar {
                 font-size: 0.7rem;
                 padding: 3px 8px;
                 max-width: 100%;
+                order: 3;
+                width: 100%;
             }
             .mockup-img-wrap-mobile {
                 padding: 12px 0;
             }
             .mockup-img-wrap-mobile img {
-                max-width: 100%;
+                max-width: min(320px, 100%);
                 border-width: 2px;
             }
             .video-reel-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
             .graphics-strip-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
                 gap: 10px;
             }
             .ux-features-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .detail-card {
+                padding: 14px 8px;
+            }
+            .detail-card-body {
+                padding: 10px 6px;
+            }
+            .pillar-block {
+                padding: 10px 6px;
+            }
+            .proof-showcase-container {
+                padding: 8px 4px;
+            }
+            .proof-tab-bar {
+                flex-direction: column;
+            }
+            .proof-tab-btn {
+                width: 100%;
+                justify-content: flex-start;
+                font-size: 0.78rem;
+                padding: 8px 10px;
+            }
+            .pdp-toggle-bar {
+                flex-direction: row;
+            }
+            .pdp-toggle-bar .proof-tab-btn {
+                width: auto;
+                flex: 1;
+                justify-content: center;
+            }
+            .video-reel-top {
+                font-size: 0.76rem;
+            }
+            .reel-badge-pill {
+                font-size: 0.68rem;
+                padding: 2px 6px;
+                white-space: nowrap;
             }
         }
     </style>
@@ -750,17 +809,17 @@
                             </p>
 
                             <!-- Calendar Tab Bar -->
-                            <div class="proof-tab-bar">
-                                <button class="proof-tab-btn active" id="btn-cal-tab1" onclick="switchCalendarTab('cal-tab1', this)">
+                            <div class="proof-tab-bar" role="tablist" aria-label="Master Content Calendar Tabs">
+                                <button type="button" class="proof-tab-btn active" id="btn-cal-tab1" role="tab" aria-selected="true" aria-controls="cal-tab1" onclick="switchCalendarTab('cal-tab1', this)">
                                     <i class="fas fa-calendar-week"></i> Tab 1: 3-Month Editorial Calendar (Nov Sprint)
                                 </button>
-                                <button class="proof-tab-btn" id="btn-cal-tab2" onclick="switchCalendarTab('cal-tab2', this)">
+                                <button type="button" class="proof-tab-btn" id="btn-cal-tab2" role="tab" aria-selected="false" aria-controls="cal-tab2" onclick="switchCalendarTab('cal-tab2', this)">
                                     <i class="fas fa-lightbulb"></i> Tab 2: Content Ideas Matrix (4 Categorized Pillars)
                                 </button>
                             </div>
 
                             <!-- Calendar Tab 1 Pane -->
-                            <div id="cal-tab1" class="cal-pane" style="display: block;">
+                            <div id="cal-tab1" class="cal-pane" role="tabpanel" aria-labelledby="btn-cal-tab1" style="display: block;">
                                 <div class="mockup-window">
                                     <div class="mockup-header">
                                         <div class="mockup-dots">
@@ -783,7 +842,7 @@
                             </div>
 
                             <!-- Calendar Tab 2 Pane -->
-                            <div id="cal-tab2" class="cal-pane" style="display: none;">
+                            <div id="cal-tab2" class="cal-pane" role="tabpanel" aria-labelledby="btn-cal-tab2" style="display: none;">
                                 <div class="mockup-window">
                                     <div class="mockup-header">
                                         <div class="mockup-dots">
@@ -833,7 +892,7 @@
                                         <span class="reel-badge-pill">Direct Hook</span>
                                     </div>
                                     <div class="video-player-container">
-                                        <video controls playsinline preload="metadata">
+                                        <video controls playsinline preload="metadata" poster="assets/pet-shop/reel_safe_vet_trips_9x16_poster.jpg">
                                             <source src="assets/pet-shop/reel_safe_vet_trips_9x16.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
@@ -856,7 +915,7 @@
                                         <span class="reel-badge-pill">UGC Lifestyle</span>
                                     </div>
                                     <div class="video-player-container">
-                                        <video controls playsinline preload="metadata">
+                                        <video controls playsinline preload="metadata" poster="assets/pet-shop/reel_ugc_backpack_9x16_poster.jpg">
                                             <source src="assets/pet-shop/reel_ugc_backpack_9x16.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
@@ -879,7 +938,7 @@
                                         <span class="reel-badge-pill">3D Animation</span>
                                     </div>
                                     <div class="video-player-container">
-                                        <video controls playsinline preload="metadata">
+                                        <video controls playsinline preload="metadata" poster="assets/pet-shop/reel_kids_cartoon_9x16_poster.jpg">
                                             <source src="assets/pet-shop/reel_kids_cartoon_9x16.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
@@ -906,20 +965,20 @@
                             </p>
 
                             <!-- Graphic Tab Bar -->
-                            <div class="proof-tab-bar">
-                                <button class="proof-tab-btn active" id="btn-grp-tab1" onclick="switchGraphicTab('grp-tab1', this)">
+                            <div class="proof-tab-bar" role="tablist" aria-label="Social Graphic Production Strips">
+                                <button type="button" class="proof-tab-btn active" id="btn-grp-tab1" role="tab" aria-selected="true" aria-controls="grp-tab1" onclick="switchGraphicTab('grp-tab1', this)">
                                     <i class="fas fa-clone"></i> 5-Slide Educational Carousel (Food Label Guide)
                                 </button>
-                                <button class="proof-tab-btn" id="btn-grp-tab2" onclick="switchGraphicTab('grp-tab2', this)">
+                                <button type="button" class="proof-tab-btn" id="btn-grp-tab2" role="tab" aria-selected="false" aria-controls="grp-tab2" onclick="switchGraphicTab('grp-tab2', this)">
                                     <i class="fas fa-heart"></i> Care, Trust &amp; Community Graphics
                                 </button>
-                                <button class="proof-tab-btn" id="btn-grp-tab3" onclick="switchGraphicTab('grp-tab3', this)">
+                                <button type="button" class="proof-tab-btn" id="btn-grp-tab3" role="tab" aria-selected="false" aria-controls="grp-tab3" onclick="switchGraphicTab('grp-tab3', this)">
                                     <i class="fas fa-th-large"></i> 10-Card Catalog Ad Cards (Carriers)
                                 </button>
                             </div>
 
                             <!-- Graphic Strip 1: 5-Slide Carousel -->
-                            <div id="grp-tab1" class="grp-pane" style="display: block;">
+                            <div id="grp-tab1" class="grp-pane" role="tabpanel" aria-labelledby="btn-grp-tab1" style="display: block;">
                                 <div class="graphics-strip-grid">
                                     <div class="graphic-card">
                                         <div class="graphic-card-thumb">
@@ -970,7 +1029,7 @@
                             </div>
 
                             <!-- Graphic Strip 2: Trust & Health Guides -->
-                            <div id="grp-tab2" class="grp-pane" style="display: none;">
+                            <div id="grp-tab2" class="grp-pane" role="tabpanel" aria-labelledby="btn-grp-tab2" style="display: none;">
                                 <div class="graphics-strip-grid">
                                     <div class="graphic-card">
                                         <div class="graphic-card-thumb">
@@ -1012,7 +1071,7 @@
                             </div>
 
                             <!-- Graphic Strip 3: Catalog Carousel Ad Cards -->
-                            <div id="grp-tab3" class="grp-pane" style="display: none;">
+                            <div id="grp-tab3" class="grp-pane" role="tabpanel" aria-labelledby="btn-grp-tab3" style="display: none;">
                                 <div class="graphics-strip-grid">
                                     <div class="graphic-card">
                                         <div class="graphic-card-thumb">
@@ -1141,23 +1200,23 @@
                             </p>
 
                             <!-- UX View Switcher -->
-                            <div class="proof-tab-bar">
-                                <button class="proof-tab-btn active" id="btn-ux-dt-home" onclick="switchUxView('ux-dt-home', this)">
+                            <div class="proof-tab-bar" role="tablist" aria-label="Storefront UX Views">
+                                <button type="button" class="proof-tab-btn active" id="btn-ux-dt-home" role="tab" aria-selected="true" aria-controls="ux-dt-home" onclick="switchUxView('ux-dt-home', this)">
                                     <i class="fas fa-desktop"></i> Desktop Storefront
                                 </button>
-                                <button class="proof-tab-btn" id="btn-ux-mb-home" onclick="switchUxView('ux-mb-home', this)">
+                                <button type="button" class="proof-tab-btn" id="btn-ux-mb-home" role="tab" aria-selected="false" aria-controls="ux-mb-home" onclick="switchUxView('ux-mb-home', this)">
                                     <i class="fas fa-mobile-alt"></i> Mobile Storefront
                                 </button>
-                                <button class="proof-tab-btn" id="btn-ux-dt-pdp" onclick="switchUxView('ux-dt-pdp', this)">
+                                <button type="button" class="proof-tab-btn" id="btn-ux-dt-pdp" role="tab" aria-selected="false" aria-controls="ux-dt-pdp" onclick="switchUxView('ux-dt-pdp', this)">
                                     <i class="fas fa-shopping-bag"></i> Carrier Landing Page (PDP)
                                 </button>
-                                <button class="proof-tab-btn" id="btn-ux-drawer" onclick="switchUxView('ux-drawer', this)">
+                                <button type="button" class="proof-tab-btn" id="btn-ux-drawer" role="tab" aria-selected="false" aria-controls="ux-drawer" onclick="switchUxView('ux-drawer', this)">
                                     <i class="fas fa-shopping-cart"></i> Slide-Out Mini-Cart Drawer
                                 </button>
                             </div>
 
                             <!-- View 1: Desktop Storefront -->
-                            <div id="ux-dt-home" class="ux-pane" style="display: block;">
+                            <div id="ux-dt-home" class="ux-pane" role="tabpanel" aria-labelledby="btn-ux-dt-home" style="display: block;">
                                 <div class="mockup-window">
                                     <div class="mockup-header">
                                         <div class="mockup-dots">
@@ -1194,7 +1253,7 @@
                             </div>
 
                             <!-- View 2: Mobile Storefront -->
-                            <div id="ux-mb-home" class="ux-pane" style="display: none;">
+                            <div id="ux-mb-home" class="ux-pane" role="tabpanel" aria-labelledby="btn-ux-mb-home" style="display: none;">
                                 <div class="mockup-window">
                                     <div class="mockup-header">
                                         <div class="mockup-dots">
@@ -1231,16 +1290,16 @@
                             </div>
 
                             <!-- View 3: Carrier Product Landing Page (PDP) -->
-                            <div id="ux-dt-pdp" class="ux-pane" style="display: none;">
-                                <div class="proof-tab-bar pdp-toggle-bar">
-                                    <button class="proof-tab-btn active" id="btn-pdp-dt" onclick="switchPdpDevice('dt', this)">
+                            <div id="ux-dt-pdp" class="ux-pane" role="tabpanel" aria-labelledby="btn-ux-dt-pdp" style="display: none;">
+                                <div class="proof-tab-bar pdp-toggle-bar" role="tablist" aria-label="PDP Viewport Devices">
+                                    <button type="button" class="proof-tab-btn active" id="btn-pdp-dt" role="tab" aria-selected="true" aria-controls="pdp-view-dt" onclick="switchPdpDevice('dt', this)">
                                         <i class="fas fa-desktop"></i> Desktop PDP (1440px)
                                     </button>
-                                    <button class="proof-tab-btn" id="btn-pdp-mb" onclick="switchPdpDevice('mb', this)">
+                                    <button type="button" class="proof-tab-btn" id="btn-pdp-mb" role="tab" aria-selected="false" aria-controls="pdp-view-mb" onclick="switchPdpDevice('mb', this)">
                                         <i class="fas fa-mobile-alt"></i> Mobile PDP (375px)
                                     </button>
                                 </div>
-                                <div id="pdp-view-dt" class="pdp-device-pane" style="display: block;">
+                                <div id="pdp-view-dt" class="pdp-device-pane" role="tabpanel" aria-labelledby="btn-pdp-dt" style="display: block;">
                                     <div class="mockup-window">
                                         <div class="mockup-header">
                                             <div class="mockup-dots">
@@ -1261,7 +1320,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="pdp-view-mb" class="pdp-device-pane" style="display: none;">
+                                <div id="pdp-view-mb" class="pdp-device-pane" role="tabpanel" aria-labelledby="btn-pdp-mb" style="display: none;">
                                     <div class="mockup-window">
                                         <div class="mockup-header">
                                             <div class="mockup-dots">
@@ -1299,7 +1358,7 @@
                             </div>
 
                             <!-- View 4: Slide-Out Mini-Cart Drawer -->
-                            <div id="ux-drawer" class="ux-pane" style="display: none;">
+                            <div id="ux-drawer" class="ux-pane" role="tabpanel" aria-labelledby="btn-ux-drawer" style="display: none;">
                                 <div class="mockup-window">
                                     <div class="mockup-header">
                                         <div class="mockup-dots">
@@ -1418,8 +1477,10 @@
             if (btn && btn.parentElement) {
                 btn.parentElement.querySelectorAll('.proof-tab-btn').forEach(function(b) {
                     b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
                 });
                 btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
             }
             var target = document.getElementById(tabId);
             if (target) {
@@ -1434,8 +1495,10 @@
             if (btn && btn.parentElement) {
                 btn.parentElement.querySelectorAll('.proof-tab-btn').forEach(function(b) {
                     b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
                 });
                 btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
             }
             var target = document.getElementById(tabId);
             if (target) {
@@ -1450,8 +1513,10 @@
             if (btn && btn.parentElement) {
                 btn.parentElement.querySelectorAll('.proof-tab-btn').forEach(function(b) {
                     b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
                 });
                 btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
             }
             var target = document.getElementById(viewId);
             if (target) {
@@ -1472,8 +1537,10 @@
             if (btn && btn.parentElement) {
                 btn.parentElement.querySelectorAll('.proof-tab-btn').forEach(function(b) {
                     b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
                 });
                 btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
             }
         }
     </script>
