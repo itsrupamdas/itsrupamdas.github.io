@@ -117,7 +117,7 @@
             font-size: 0.85rem;
         }
 
-        /* Proof Slot Container */
+        /* Proof Slot Container (Compact Same-Size Box) */
         .proof-slot-frame {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
@@ -129,14 +129,14 @@
 
         .proof-slot-bar {
             background: var(--bg-subtle);
-            padding: 12px 18px;
+            padding: 10px 16px;
             border-bottom: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 8px;
-            font-size: 0.86rem;
+            font-size: 0.84rem;
             font-weight: 700;
             color: var(--charcoal);
         }
@@ -147,7 +147,7 @@
         }
 
         .proof-slot-badge {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
             padding: 3px 9px;
             border-radius: 4px;
@@ -192,532 +192,81 @@
             margin: 0;
         }
 
-        /* ==========================================================================
-           Proof 01 & Proof 02 Showcase Enhancements
-           ========================================================================== */
-        .proof-showcase-container {
-            padding: 20px;
-            background: var(--bg-card);
-        }
-
-        .proof-section-divider {
-            margin: 28px 0 16px 0;
-            padding-top: 24px;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .proof-sub-title {
-            font-size: 1.02rem;
-            font-weight: 800;
-            color: var(--charcoal);
+        /* Compact Horizontally Scrollable Raw Proof Strip */
+        .proof-scroll-strip {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 6px;
+            padding: 12px 14px;
+            background: #f8fafc;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .proof-sub-title i {
-            color: var(--amber);
-            font-size: 1.05rem;
+        .proof-scroll-strip::-webkit-scrollbar {
+            height: 6px;
         }
 
-        .proof-sub-desc {
-            font-size: 0.86rem;
-            color: var(--charcoal-secondary);
-            margin-bottom: 16px;
-            line-height: 1.55;
-        }
-
-        /* Tab Switcher Controls */
-        .proof-tab-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
-        .proof-tab-btn {
-            background: var(--bg-subtle);
-            border: 1px solid var(--border-subtle);
-            color: var(--charcoal);
-            padding: 8px 16px;
-            border-radius: var(--radius-sm);
-            font-size: 0.84rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: var(--transition);
-            font-family: inherit;
-        }
-
-        .proof-tab-btn:hover {
-            border-color: var(--amber);
-            color: var(--amber-dark);
-        }
-
-        .proof-tab-btn.active {
-            background: var(--charcoal);
-            color: #fff;
-            border-color: var(--charcoal);
-        }
-
-        .proof-tab-btn.active i {
-            color: var(--amber);
-        }
-
-        /* Mockup Chrome Frame (Desktop Browser & Spreadsheets) */
-        .mockup-window {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            box-shadow: var(--shadow-subtle);
-            margin-bottom: 14px;
-        }
-
-        .mockup-header {
-            background: #1e293b;
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            font-size: 0.78rem;
-            color: #94a3b8;
-            flex-wrap: wrap;
-        }
-
-        .mockup-dots {
-            display: flex;
-            gap: 6px;
-        }
-
-        .mockup-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .dot-red { background: #ef4444; }
-        .dot-yellow { background: #f59e0b; }
-        .dot-green { background: #10b981; }
-
-        .mockup-address-bar {
-            background: #0f172a;
+        .proof-scroll-strip::-webkit-scrollbar-track {
+            background: #e2e8f0;
             border-radius: 4px;
-            padding: 4px 14px;
-            color: #e2e8f0;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 0.76rem;
-            flex-grow: 1;
-            max-width: 520px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
         }
 
-        .mockup-address-bar i {
-            color: #10b981;
-            font-size: 0.72rem;
+        .proof-scroll-strip::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
         }
 
-        .mockup-img-wrap {
-            background: #0b0f19;
+        .proof-scroll-strip::-webkit-scrollbar-thumb:hover {
+            background: var(--amber);
+        }
+
+        .proof-raw-item {
+            flex: 0 0 auto;
+            height: 175px;
+            border-radius: 6px;
+            border: 1px solid var(--border-subtle);
+            background: #0f172a;
             overflow: hidden;
             position: relative;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
-        .mockup-img-wrap img {
-            width: 100%;
-            height: auto;
+        .proof-raw-item img,
+        .proof-raw-item video {
+            height: 100%;
+            width: auto;
+            max-width: none;
             display: block;
             object-fit: contain;
         }
 
-        .mockup-img-wrap-mobile {
-            background: #0b0f19;
-            padding: 18px 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .mockup-img-wrap-mobile img {
-            max-width: 440px;
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-            border: 4px solid #334155;
-        }
-
-        .proof-caption-box {
-            padding: 14px 18px;
-            background: var(--bg-canvas);
-            border-top: 1px solid var(--border-subtle);
-            font-size: 0.88rem;
-            color: var(--charcoal-secondary);
-            line-height: 1.55;
-        }
-
-        .excel-file-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            border-radius: var(--radius-sm);
-            padding: 12px 18px;
-            margin-top: 14px;
-            font-size: 0.88rem;
-            color: #166534;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .excel-file-card a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #15803d;
+        .proof-raw-tag {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            background: rgba(15, 23, 42, 0.82);
             color: #fff;
-            padding: 6px 14px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.82rem;
-            transition: var(--transition);
-        }
-
-        .excel-file-card a:hover {
-            background: #166534;
-        }
-
-        /* 9:16 Playable Video Reels Grid */
-        .video-reel-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 14px;
-        }
-
-        .video-reel-card {
-            background: #fff;
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-subtle);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .video-reel-card:hover {
-            box-shadow: var(--shadow-card);
-            transform: translateY(-2px);
-        }
-
-        .video-reel-top {
-            padding: 10px 14px;
-            background: var(--bg-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 0.78rem;
-            font-weight: 700;
-        }
-
-        .reel-badge-pill {
-            background: var(--amber);
-            color: #fff;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-        }
-
-        .video-player-container {
-            position: relative;
-            background: #000;
-            width: 100%;
-            aspect-ratio: 9/16;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .video-player-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .video-reel-info {
-            padding: 14px 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            flex-grow: 1;
-            background: #fff;
-        }
-
-        .video-reel-info h5 {
-            font-size: 0.96rem;
-            font-weight: 800;
-            color: var(--charcoal);
-            margin: 0;
-        }
-
-        .video-reel-info p {
-            font-size: 0.83rem;
-            color: var(--charcoal-secondary);
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .video-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: auto;
-            padding-top: 8px;
-        }
-
-        .video-tag {
-            font-size: 0.72rem;
-            font-weight: 700;
-            background: var(--bg-subtle);
-            color: var(--charcoal);
-            padding: 3px 8px;
-            border-radius: 4px;
-        }
-
-        /* Graphic Strips Grid */
-        .graphics-strip-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-            gap: 14px;
-            margin-top: 14px;
-        }
-
-        .graphic-card {
-            background: #fff;
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow-subtle);
-            transition: transform 0.2s ease;
-        }
-
-        .graphic-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .graphic-card-thumb {
-            aspect-ratio: 1/1;
-            background: #0f172a;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Portrait 4:5 graphics (carousels & checklists) - preserves full uncropped height */
-        #grp-tab1 .graphic-card-thumb,
-        .graphic-card-thumb.portrait {
-            aspect-ratio: 4/5;
-        }
-
-        .graphic-card-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .graphic-card:hover .graphic-card-thumb img {
-            transform: scale(1.04);
-        }
-
-        .graphic-card-label {
-            padding: 10px 12px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: var(--charcoal);
-            background: #fff;
-            border-top: 1px solid var(--border-subtle);
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
-
-        .graphic-card-label span {
-            font-size: 0.74rem;
-            font-weight: 500;
-            color: var(--charcoal-muted);
-        }
-
-        /* UX Feature Highlights Grid */
-        .ux-features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 12px;
-            margin-top: 14px;
-        }
-
-        .ux-feature-item {
-            background: var(--bg-subtle);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-sm);
-            padding: 12px 14px;
-        }
-
-        .ux-feature-item h6 {
-            font-size: 0.88rem;
-            font-weight: 800;
-            color: var(--charcoal);
-            margin: 0 0 4px 0;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .ux-feature-item h6 i {
-            color: var(--amber);
-        }
-
-        .ux-feature-item p {
-            font-size: 0.81rem;
-            color: var(--charcoal-secondary);
-            margin: 0;
-            line-height: 1.45;
-        }
-
-        /* Device sub-switcher for PDP */
-        .pdp-toggle-bar {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 14px;
-        }
-
-        .pdp-device-pane {
-            animation: fadeIn 0.2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .proof-tab-btn:focus-visible {
-            outline: 2px solid var(--amber);
-            outline-offset: 2px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 3px;
+            pointer-events: none;
+            line-height: 1.3;
         }
 
         @media (max-width: 768px) {
-            .detail-card {
-                padding: 18px 12px;
-            }
-            .detail-card-body {
-                padding: 16px 10px;
-            }
             .pillar-block {
-                padding: 14px 10px;
-                margin-bottom: 16px;
+                padding: 16px 14px;
             }
-            .proof-showcase-container {
-                padding: 12px 8px;
-            }
-            .proof-tab-bar {
-                gap: 6px;
-            }
-            .proof-tab-btn {
-                padding: 8px 12px;
-                font-size: 0.8rem;
-            }
-            .mockup-header {
-                padding: 8px 12px;
-                font-size: 0.72rem;
-                flex-wrap: wrap;
-            }
-            .mockup-address-bar {
-                font-size: 0.7rem;
-                padding: 3px 8px;
-                max-width: 100%;
-                order: 3;
-                width: 100%;
-            }
-            .mockup-img-wrap-mobile {
-                padding: 12px 0;
-            }
-            .mockup-img-wrap-mobile img {
-                max-width: min(320px, 100%);
-                border-width: 2px;
-            }
-            .video-reel-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .graphics-strip-grid {
-                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-                gap: 10px;
-            }
-            .ux-features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .detail-card {
-                padding: 14px 8px;
-            }
-            .detail-card-body {
-                padding: 10px 6px;
-            }
-            .pillar-block {
-                padding: 10px 6px;
-            }
-            .proof-showcase-container {
-                padding: 8px 4px;
-            }
-            .proof-tab-bar {
-                flex-direction: column;
-            }
-            .proof-tab-btn {
-                width: 100%;
-                justify-content: flex-start;
-                font-size: 0.78rem;
-                padding: 8px 10px;
-            }
-            .pdp-toggle-bar {
-                flex-direction: row;
-            }
-            .pdp-toggle-bar .proof-tab-btn {
-                width: auto;
-                flex: 1;
-                justify-content: center;
-                padding: 7px 8px;
-                font-size: 0.74rem;
-                white-space: nowrap;
-            }
-            .video-reel-top {
-                font-size: 0.76rem;
-            }
-            .reel-badge-pill {
-                font-size: 0.68rem;
-                padding: 2px 6px;
-                white-space: nowrap;
+            .proof-raw-item {
+                height: 150px;
             }
         }
     </style>
@@ -794,387 +343,129 @@
                             <span class="pillar-num">01</span>
                             <h4>Content Calendar &amp; AI Creative Production</h4>
                         </div>
-                        <span class="pillar-tag">42 Posts &bull; 20+ Graphics &bull; 6 AI Reels</span>
+                        <span class="pillar-tag">42 Posts &bull; 20+ Graphics &bull; AI Reels</span>
                     </div>
                     <ul class="pillar-bullets">
                         <li><i class="fas fa-check"></i> <strong>42-Post Monthly Content Calendar:</strong> Brainstormed and mapped a 30-day schedule tailored to cat parents (imported food rotations, litter odor solutions, and factory-seal authenticity proof).</li>
-                        <li><i class="fas fa-check"></i> <strong>AI-Executed Visuals &amp; Video Reels:</strong> Designed 20+ static &amp; carousel graphics and produced 6 vertical (9:16) AI video ads (3D cartoon capsule carrier animations, safe vet trip hooks, and custom voiceovers).</li>
+                        <li><i class="fas fa-check"></i> <strong>AI-Executed Visuals &amp; Video Reels:</strong> Designed 20+ static &amp; carousel graphics and produced vertical (9:16) AI video ads (3D cartoon capsule carrier animations, UGC lifestyle demos, and custom voiceovers).</li>
                     </ul>
 
-                    <!-- Proof Slot 01: Embedded Visual & Video Proof Showcase -->
+                    <!-- Proof Slot 01: Compact Horizontally Scrollable Raw Proof -->
                     <div class="proof-slot-frame" id="proof-calendar-ai">
                         <div class="proof-slot-bar">
-                            <span><i class="fas fa-calendar-alt"></i> Proof 01: Content Calendar &amp; AI Creative Production Showcase</span>
-                            <span class="proof-slot-badge proof-slot-badge-verified"><i class="fas fa-check"></i> Verified Deliverables</span>
+                            <span><i class="fas fa-calendar-alt"></i> Proof 01: Raw Content Calendar, AI Video Reels &amp; Graphics</span>
+                            <span class="proof-slot-badge proof-slot-badge-verified"><i class="fas fa-arrows-alt-h"></i> Scroll Raw Proof &rarr;</span>
                         </div>
-                        <div class="proof-showcase-container">
+                        <div class="proof-scroll-strip" aria-label="Proof 01 Raw Screenshots and Videos">
+                            <!-- Raw Calendar Sheet 1 -->
+                            <a href="assets/pet-shop/calendar_tab1_schedule.png" target="_blank" class="proof-raw-item" title="Open Full Raw Screenshot: 3-Month Editorial Calendar">
+                                <img src="assets/pet-shop/calendar_tab1_schedule.png" alt="Raw Content Calendar Schedule Sheet" loading="lazy">
+                                <span class="proof-raw-tag">Calendar Sheet 1 (Schedule)</span>
+                            </a>
 
-                            <!-- Part A: 2-Tab Master Content Calendar Preview -->
-                            <div class="proof-sub-title">
-                                <i class="fas fa-table"></i> A. Master Content Calendar Preview (2-Tab Spreadsheet Execution)
-                            </div>
-                            <p class="proof-sub-desc">
-                                Master editorial calendar structured inside <code>PAW_Content_Calendar_Oct2026-Dec2026.xlsx</code>. Toggle below to review both the daily dated posting schedule and the 4-pillar content ideas matrix.
-                            </p>
+                            <!-- Raw Calendar Sheet 2 -->
+                            <a href="assets/pet-shop/calendar_tab2_ideas.png" target="_blank" class="proof-raw-item" title="Open Full Raw Screenshot: Content Ideas Matrix">
+                                <img src="assets/pet-shop/calendar_tab2_ideas.png" alt="Raw Content Calendar Ideas Sheet" loading="lazy">
+                                <span class="proof-raw-tag">Calendar Sheet 2 (Ideas)</span>
+                            </a>
 
-                            <!-- Calendar Tab Bar -->
-                            <div class="proof-tab-bar" role="tablist" aria-label="Master Content Calendar Tabs">
-                                <button type="button" class="proof-tab-btn active" id="btn-cal-tab1" role="tab" aria-selected="true" tabindex="0" aria-controls="cal-tab1" onclick="switchCalendarTab('cal-tab1', this)">
-                                    <i class="fas fa-calendar-week"></i> Tab 1: 3-Month Editorial Calendar (Nov Sprint)
-                                </button>
-                                <button type="button" class="proof-tab-btn" id="btn-cal-tab2" role="tab" aria-selected="false" tabindex="-1" aria-controls="cal-tab2" onclick="switchCalendarTab('cal-tab2', this)">
-                                    <i class="fas fa-lightbulb"></i> Tab 2: Content Ideas Matrix (4 Categorized Pillars)
-                                </button>
-                            </div>
-
-                            <!-- Calendar Tab 1 Pane -->
-                            <div id="cal-tab1" class="cal-pane" role="tabpanel" aria-labelledby="btn-cal-tab1" style="display: block;">
-                                <div class="mockup-window">
-                                    <div class="mockup-header">
-                                        <div class="mockup-dots">
-                                            <span class="mockup-dot dot-red"></span>
-                                            <span class="mockup-dot dot-yellow"></span>
-                                            <span class="mockup-dot dot-green"></span>
-                                        </div>
-                                        <div class="mockup-address-bar">
-                                            <i class="fas fa-file-excel"></i> PAW_Content_Calendar_Oct2026-Dec2026.xlsx &bull; [Sheet: 3 Month Calendar]
-                                        </div>
-                                        <span>42-Post Execution Schedule</span>
-                                    </div>
-                                    <div class="mockup-img-wrap">
-                                        <img src="assets/pet-shop/calendar_tab1_schedule.png" alt="Pet Shop 3-Month Content Calendar Editorial Schedule" loading="lazy">
-                                    </div>
-                                    <div class="proof-caption-box">
-                                        <strong>Tab 1 &mdash; 3-Month Editorial Schedule:</strong> Maps daily social media publishing across 4 coordinated tiers: dated commercial events (30-Day Sprint Launch, 11.11 Mega Sale, Black Friday), daily content focus (Monday cat health tips, tutorial carousels), recurring evergreen routines (Night Question polls, customer review of the week), and exact creative production formats.
-                                    </div>
-                                </div>
+                            <!-- Playable Raw Video Reel (UGC Backpack) -->
+                            <div class="proof-raw-item">
+                                <video controls playsinline preload="metadata" poster="assets/pet-shop/reel_ugc_backpack_9x16_poster.jpg" aria-label="AI Video Reel: UGC Backpack">
+                                    <source src="assets/pet-shop/reel_ugc_backpack_9x16.mp4" type="video/mp4">
+                                </video>
+                                <span class="proof-raw-tag">AI Reel: UGC Backpack</span>
                             </div>
 
-                            <!-- Calendar Tab 2 Pane -->
-                            <div id="cal-tab2" class="cal-pane" role="tabpanel" aria-labelledby="btn-cal-tab2" style="display: none;">
-                                <div class="mockup-window">
-                                    <div class="mockup-header">
-                                        <div class="mockup-dots">
-                                            <span class="mockup-dot dot-red"></span>
-                                            <span class="mockup-dot dot-yellow"></span>
-                                            <span class="mockup-dot dot-green"></span>
-                                        </div>
-                                        <div class="mockup-address-bar">
-                                            <i class="fas fa-file-excel"></i> PAW_Content_Calendar_Oct2026-Dec2026.xlsx &bull; [Sheet: Content Ideas]
-                                        </div>
-                                        <span>4 Content Pillars Matrix</span>
-                                    </div>
-                                    <div class="mockup-img-wrap">
-                                        <img src="assets/pet-shop/calendar_tab2_ideas.png" alt="Pet Shop Content Ideas Categorized Matrix" loading="lazy">
-                                    </div>
-                                    <div class="proof-caption-box">
-                                        <strong>Tab 2 &mdash; Categorized Content Ideas Matrix:</strong> Systematizes 42+ ideas into 4 strategic pillars to maintain engagement without fatigue &mdash; <em>Informational</em> (food label guides, safe vs toxic food tutorials), <em>Inspirational</em> (customer rescue stories, cat of the week), <em>Fun/Entertaining</em> (zoomies after cat treats, funny POV reels), and <em>Business/Conversion</em> (brand stock showcases, seal authenticity proof, 80৳ express delivery CTA).
-                                    </div>
-                                </div>
+                            <!-- Playable Raw Video Reel (3D Cartoon Capsule) -->
+                            <div class="proof-raw-item">
+                                <video controls playsinline preload="metadata" poster="assets/pet-shop/reel_kids_cartoon_9x16_poster.jpg" aria-label="AI Video Reel: 3D Cartoon Capsule">
+                                    <source src="assets/pet-shop/reel_kids_cartoon_9x16.mp4" type="video/mp4">
+                                </video>
+                                <span class="proof-raw-tag">AI Reel: 3D Cartoon</span>
                             </div>
 
-                            <!-- Master Workbook Download / Reference Card -->
-                            <div class="excel-file-card">
-                                <div>
-                                    <i class="fas fa-file-excel" style="color: #166534; font-size: 1.1rem; margin-right: 6px;"></i>
-                                    <strong>Master Calendar Workbook:</strong> <code>PAW_Content_Calendar_Oct2026-Dec2026.xlsx</code> (2-Tab OpenPyXL Sheet)
-                                </div>
-                                <a href="assets/pet-shop/PAW_Content_Calendar_Oct2026-Dec2026.xlsx" download="Pet_Shop_Content_Calendar_Oct2026-Dec2026.xlsx">
-                                    <i class="fas fa-download"></i> Download Master XLSX
-                                </a>
-                            </div>
+                            <!-- 5-Slide Educational Carousel -->
+                            <a href="assets/pet-shop/social_post_carousel_slide1.png" target="_blank" class="proof-raw-item" title="Carousel Slide 1">
+                                <img src="assets/pet-shop/social_post_carousel_slide1.png" alt="Carousel Slide 1" loading="lazy">
+                                <span class="proof-raw-tag">Carousel 01</span>
+                            </a>
+                            <a href="assets/pet-shop/social_post_carousel_slide2.png" target="_blank" class="proof-raw-item" title="Carousel Slide 2">
+                                <img src="assets/pet-shop/social_post_carousel_slide2.png" alt="Carousel Slide 2" loading="lazy">
+                                <span class="proof-raw-tag">Carousel 02</span>
+                            </a>
+                            <a href="assets/pet-shop/social_post_carousel_slide3.png" target="_blank" class="proof-raw-item" title="Carousel Slide 3">
+                                <img src="assets/pet-shop/social_post_carousel_slide3.png" alt="Carousel Slide 3" loading="lazy">
+                                <span class="proof-raw-tag">Carousel 03</span>
+                            </a>
+                            <a href="assets/pet-shop/social_post_carousel_slide4.png" target="_blank" class="proof-raw-item" title="Carousel Slide 4">
+                                <img src="assets/pet-shop/social_post_carousel_slide4.png" alt="Carousel Slide 4" loading="lazy">
+                                <span class="proof-raw-tag">Carousel 04</span>
+                            </a>
+                            <a href="assets/pet-shop/social_post_carousel_slide5.png" target="_blank" class="proof-raw-item" title="Carousel Slide 5">
+                                <img src="assets/pet-shop/social_post_carousel_slide5.png" alt="Carousel Slide 5" loading="lazy">
+                                <span class="proof-raw-tag">Carousel 05</span>
+                            </a>
 
-                            <!-- Part B: Playable 9:16 Vertical AI Video Reels -->
-                            <div class="proof-section-divider"></div>
-                            <div class="proof-sub-title">
-                                <i class="fas fa-video"></i> B. Playable 9:16 Vertical AI Video Ads &amp; Reels
-                            </div>
-                            <p class="proof-sub-desc">
-                                Vertical 9:16 AI-generated short-form video ads created for Instagram Reels &amp; Facebook Feed. Press play to review synced voiceovers, 3D animated hooks, and problem-solution product demos.
-                            </p>
+                            <!-- Social Posts -->
+                            <a href="assets/pet-shop/social_post_checklist.png" target="_blank" class="proof-raw-item" title="Kitten Checklist Post">
+                                <img src="assets/pet-shop/social_post_checklist.png" alt="Kitten Checklist Post" loading="lazy">
+                                <span class="proof-raw-tag">Post: Checklist</span>
+                            </a>
+                            <a href="assets/pet-shop/social_post_hydration.png" target="_blank" class="proof-raw-item" title="Hydration Post">
+                                <img src="assets/pet-shop/social_post_hydration.png" alt="Hydration Post" loading="lazy">
+                                <span class="proof-raw-tag">Post: Hydration</span>
+                            </a>
+                            <a href="assets/pet-shop/social_post_trust_seal.png" target="_blank" class="proof-raw-item" title="Authentic Seal Post">
+                                <img src="assets/pet-shop/social_post_trust_seal.png" alt="Authentic Seal Post" loading="lazy">
+                                <span class="proof-raw-tag">Post: Trust Seal</span>
+                            </a>
+                            <a href="assets/pet-shop/social_post_combo_offer.png" target="_blank" class="proof-raw-item" title="Combo Offer Post">
+                                <img src="assets/pet-shop/social_post_combo_offer.png" alt="Combo Offer Post" loading="lazy">
+                                <span class="proof-raw-tag">Post: Combo Offer</span>
+                            </a>
 
-                            <div class="video-reel-grid">
-                                <!-- Reel 01 -->
-                                <div class="video-reel-card">
-                                    <div class="video-reel-top">
-                                        <span><i class="fas fa-film"></i> Reel 01</span>
-                                        <span class="reel-badge-pill">Direct Hook</span>
-                                    </div>
-                                    <div class="video-player-container">
-                                        <video controls playsinline preload="metadata" poster="assets/pet-shop/reel_safe_vet_trips_9x16_poster.jpg" aria-label="Reel 01: Safe Vet Trips &amp; Travel Hook (9:16 Vertical AI Video Reel)">
-                                            <source src="assets/pet-shop/reel_safe_vet_trips_9x16.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                    <div class="video-reel-info">
-                                        <h5>Safe Vet Trips &amp; Travel Hook</h5>
-                                        <p>Addresses cat travel anxiety with breathable mesh ventilation, safety locking zippers, and ergonomic car-seat straps.</p>
-                                        <div class="video-tags">
-                                            <span class="video-tag">9:16 Vertical</span>
-                                            <span class="video-tag">Bangla Voiceover</span>
-                                            <span class="video-tag">Problem-Solution</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Reel 02 -->
-                                <div class="video-reel-card">
-                                    <div class="video-reel-top">
-                                        <span><i class="fas fa-film"></i> Reel 02</span>
-                                        <span class="reel-badge-pill">UGC Lifestyle</span>
-                                    </div>
-                                    <div class="video-player-container">
-                                        <video controls playsinline preload="metadata" poster="assets/pet-shop/reel_ugc_backpack_9x16_poster.jpg" aria-label="Reel 02: Hands-Free UGC Backpack Reel (9:16 Vertical AI Video Reel)">
-                                            <source src="assets/pet-shop/reel_ugc_backpack_9x16.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                    <div class="video-reel-info">
-                                        <h5>Hands-Free UGC Backpack Reel</h5>
-                                        <p>Lifestyle user-perspective reel showing hands-free commuting, wide-view bubble window, and lightweight comfort.</p>
-                                        <div class="video-tags">
-                                            <span class="video-tag">9:16 Vertical</span>
-                                            <span class="video-tag">Social Proof</span>
-                                            <span class="video-tag">Lifestyle Demo</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Reel 03 -->
-                                <div class="video-reel-card">
-                                    <div class="video-reel-top">
-                                        <span><i class="fas fa-film"></i> Reel 03</span>
-                                        <span class="reel-badge-pill">3D Animation</span>
-                                    </div>
-                                    <div class="video-player-container">
-                                        <video controls playsinline preload="metadata" poster="assets/pet-shop/reel_kids_cartoon_9x16_poster.jpg" aria-label="Reel 03: 3D Kids Cartoon Capsule Backpack (9:16 Vertical AI Video Reel)">
-                                            <source src="assets/pet-shop/reel_kids_cartoon_9x16.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                    <div class="video-reel-info">
-                                        <h5>3D Kids Cartoon Capsule Backpack</h5>
-                                        <p>Playful 3D animated capsule backpack creative driving high viral shareability, family engagement, and top-of-funnel reach.</p>
-                                        <div class="video-tags">
-                                            <span class="video-tag">9:16 Vertical</span>
-                                            <span class="video-tag">3D AI Render</span>
-                                            <span class="video-tag">High Viral Hook</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Part C: Designed Social & Carousel Graphic Strip -->
-                            <div class="proof-section-divider"></div>
-                            <div class="proof-sub-title">
-                                <i class="fas fa-images"></i> C. Designed Social &amp; Carousel Graphic Production Strip
-                            </div>
-                            <p class="proof-sub-desc">
-                                Over 20 custom branded social posts and ad graphics designed for multi-format campaign delivery. Toggle between the 5-slide educational carousel, brand trust cards, and the 10-carrier catalog ad collection.
-                            </p>
-
-                            <!-- Graphic Tab Bar -->
-                            <div class="proof-tab-bar" role="tablist" aria-label="Social Graphic Production Strips">
-                                <button type="button" class="proof-tab-btn active" id="btn-grp-tab1" role="tab" aria-selected="true" tabindex="0" aria-controls="grp-tab1" onclick="switchGraphicTab('grp-tab1', this)">
-                                    <i class="fas fa-clone"></i> 5-Slide Educational Carousel (Food Label Guide)
-                                </button>
-                                <button type="button" class="proof-tab-btn" id="btn-grp-tab2" role="tab" aria-selected="false" tabindex="-1" aria-controls="grp-tab2" onclick="switchGraphicTab('grp-tab2', this)">
-                                    <i class="fas fa-heart"></i> Care, Trust &amp; Community Graphics
-                                </button>
-                                <button type="button" class="proof-tab-btn" id="btn-grp-tab3" role="tab" aria-selected="false" tabindex="-1" aria-controls="grp-tab3" onclick="switchGraphicTab('grp-tab3', this)">
-                                    <i class="fas fa-th-large"></i> 10-Card Catalog Ad Cards (Carriers)
-                                </button>
-                            </div>
-
-                            <!-- Graphic Strip 1: 5-Slide Carousel -->
-                            <div id="grp-tab1" class="grp-pane" role="tabpanel" aria-labelledby="btn-grp-tab1" style="display: block;">
-                                <div class="graphics-strip-grid">
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/social_post_carousel_slide1.png" alt="Slide 1: Cat Food Label Guide Cover" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Slide 01 &bull; Cover
-                                            <span>ক্যাট ফুড লেবেল পড়ার ৫ নিয়ম</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/social_post_carousel_slide2.png" alt="Slide 2: First Ingredient Rule" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Slide 02 &bull; Rule 1
-                                            <span>১ম উপাদান: আসল মাংস যাচাই</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/social_post_carousel_slide3.png" alt="Slide 3: Guaranteed Analysis" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Slide 03 &bull; Rule 2
-                                            <span>গ্যারান্টিড অ্যানালাইসিস মান</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/social_post_carousel_slide4.png" alt="Slide 4: Manufacturing Dates" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Slide 04 &bull; Rule 3
-                                            <span>মেয়াদ ও আসল সিল চেনার উপায়</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/social_post_carousel_slide5.png" alt="Slide 5: AAFCO Certification" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Slide 05 &bull; Summary
-                                            <span>AAFCO আন্তর্জাতিক পুষ্টি মান</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Graphic Strip 2: Trust & Health Guides -->
-                            <div id="grp-tab2" class="grp-pane" role="tabpanel" aria-labelledby="btn-grp-tab2" style="display: none;">
-                                <div class="graphics-strip-grid">
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb portrait">
-                                            <img src="assets/pet-shop/social_post_checklist.png" alt="Kitten First Week Checklist" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            New Kitten Checklist
-                                            <span>প্রথম সপ্তাহের প্রয়োজনীয় প্রস্তুতি</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/social_post_hydration.png" alt="Cat Hydration Guide" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Cat Hydration Guide
-                                            <span>পর্যাপ্ত পানি পানের বৈজ্ঞানিক টিপস</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/social_post_trust_seal.png" alt="Authentic Brand Seal Guarantee" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Brand Trust &amp; Mission
-                                            <span>১০০% আসল আমদানিকৃত খাবারের সিল</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/social_post_combo_offer.png" alt="Curated Brand Combo Offer" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Special Brand Offer
-                                            <span>ক্যাট ফুড ও ক্রিমি ট্রিট কম্বো</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Graphic Strip 3: Catalog Carousel Ad Cards -->
-                            <div id="grp-tab3" class="grp-pane" role="tabpanel" aria-labelledby="btn-grp-tab3" style="display: none;">
-                                <div class="graphics-strip-grid">
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/ad_carousel_capsule_solid.png" alt="Solid Capsule Backpack Card" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Solid Capsule Backpack
-                                            <span>Card 01 &bull; Direct Landing CTA</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/ad_carousel_capsule_pattern.png" alt="Pattern Capsule Backpack Card" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Pattern Capsule Carrier
-                                            <span>Card 02 &bull; Direct Landing CTA</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/ad_carousel_schoolbag_dual.png" alt="Dual Schoolbag Carrier Card" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Dual Schoolbag Carrier
-                                            <span>Card 03 &bull; Direct Landing CTA</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/ad_carousel_panoramic_square.png" alt="Panoramic Square Carrier Card" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Panoramic Square Box
-                                            <span>Card 04 &bull; Direct Landing CTA</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/ad_carousel_expandable.png" alt="Expandable Tent Carrier Card" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Expandable Tent Carrier
-                                            <span>Card 05 &bull; Direct Landing CTA</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/ad_carousel_moorpet.png" alt="Luxury Explorer Carrier Card" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Luxury Explorer Carrier
-                                            <span>Card 06 &bull; Direct Landing CTA</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/ad_carousel_canvas_jeans.png" alt="Classic Canvas Capsule Card" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Classic Canvas Capsule
-                                            <span>Card 07 &bull; Direct Landing CTA</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/ad_carousel_hard_crate_deluxe.png" alt="Deluxe Hard Airline Crate Card" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Deluxe Hard Airline Crate
-                                            <span>Card 08 &bull; Direct Landing CTA</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/ad_carousel_crate_classic.png" alt="Vet-Safe Portable Crate Card" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            Vet-Safe Portable Crate
-                                            <span>Card 09 &bull; Direct Landing CTA</span>
-                                        </div>
-                                    </div>
-                                    <div class="graphic-card">
-                                        <div class="graphic-card-thumb">
-                                            <img src="assets/pet-shop/ad_carousel_ufo_3in1.png" alt="3-in-1 UFO Carrier Bed Card" loading="lazy">
-                                        </div>
-                                        <div class="graphic-card-label">
-                                            3-in-1 UFO Carrier + Bed
-                                            <span>Card 10 &bull; Direct Landing CTA</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <!-- 10 Catalog Ad Cards -->
+                            <a href="assets/pet-shop/ad_carousel_capsule_solid.png" target="_blank" class="proof-raw-item" title="Catalog Card 01">
+                                <img src="assets/pet-shop/ad_carousel_capsule_solid.png" alt="Catalog Card 01" loading="lazy">
+                                <span class="proof-raw-tag">Ad Card 01</span>
+                            </a>
+                            <a href="assets/pet-shop/ad_carousel_capsule_pattern.png" target="_blank" class="proof-raw-item" title="Catalog Card 02">
+                                <img src="assets/pet-shop/ad_carousel_capsule_pattern.png" alt="Catalog Card 02" loading="lazy">
+                                <span class="proof-raw-tag">Ad Card 02</span>
+                            </a>
+                            <a href="assets/pet-shop/ad_carousel_schoolbag_dual.png" target="_blank" class="proof-raw-item" title="Catalog Card 03">
+                                <img src="assets/pet-shop/ad_carousel_schoolbag_dual.png" alt="Catalog Card 03" loading="lazy">
+                                <span class="proof-raw-tag">Ad Card 03</span>
+                            </a>
+                            <a href="assets/pet-shop/ad_carousel_panoramic_square.png" target="_blank" class="proof-raw-item" title="Catalog Card 04">
+                                <img src="assets/pet-shop/ad_carousel_panoramic_square.png" alt="Catalog Card 04" loading="lazy">
+                                <span class="proof-raw-tag">Ad Card 04</span>
+                            </a>
+                            <a href="assets/pet-shop/ad_carousel_expandable.png" target="_blank" class="proof-raw-item" title="Catalog Card 05">
+                                <img src="assets/pet-shop/ad_carousel_expandable.png" alt="Catalog Card 05" loading="lazy">
+                                <span class="proof-raw-tag">Ad Card 05</span>
+                            </a>
+                            <a href="assets/pet-shop/ad_carousel_moorpet.png" target="_blank" class="proof-raw-item" title="Catalog Card 06">
+                                <img src="assets/pet-shop/ad_carousel_moorpet.png" alt="Catalog Card 06" loading="lazy">
+                                <span class="proof-raw-tag">Ad Card 06</span>
+                            </a>
+                            <a href="assets/pet-shop/ad_carousel_canvas_jeans.png" target="_blank" class="proof-raw-item" title="Catalog Card 07">
+                                <img src="assets/pet-shop/ad_carousel_canvas_jeans.png" alt="Catalog Card 07" loading="lazy">
+                                <span class="proof-raw-tag">Ad Card 07</span>
+                            </a>
+                            <a href="assets/pet-shop/ad_carousel_hard_crate_deluxe.png" target="_blank" class="proof-raw-item" title="Catalog Card 08">
+                                <img src="assets/pet-shop/ad_carousel_hard_crate_deluxe.png" alt="Catalog Card 08" loading="lazy">
+                                <span class="proof-raw-tag">Ad Card 08</span>
+                            </a>
+                            <a href="assets/pet-shop/ad_carousel_crate_classic.png" target="_blank" class="proof-raw-item" title="Catalog Card 09">
+                                <img src="assets/pet-shop/ad_carousel_crate_classic.png" alt="Catalog Card 09" loading="lazy">
+                                <span class="proof-raw-tag">Ad Card 09</span>
+                            </a>
+                            <a href="assets/pet-shop/ad_carousel_ufo_3in1.png" target="_blank" class="proof-raw-item" title="Catalog Card 10">
+                                <img src="assets/pet-shop/ad_carousel_ufo_3in1.png" alt="Catalog Card 10" loading="lazy">
+                                <span class="proof-raw-tag">Ad Card 10</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1193,216 +484,16 @@
                         <li><i class="fas fa-check"></i> <strong>10 Product Landing Pages:</strong> Built conversion-focused landing views for 10 Cat Travel Carrier &amp; Backpack styles with clear discount badges and direct buy buttons.</li>
                     </ul>
 
-                    <!-- Proof Slot 02: Interactive Visual Showcase -->
+                    <!-- Proof Slot 02 -->
                     <div class="proof-slot-frame" id="proof-website-ux">
                         <div class="proof-slot-bar">
-                            <span><i class="fas fa-laptop-code"></i> Proof 02: WordPress Store &amp; Landing Page Interactive Walkthrough</span>
-                            <span class="proof-slot-badge proof-slot-badge-verified"><i class="fas fa-check"></i> Live Production UI</span>
+                            <span><i class="fas fa-laptop-code"></i> Proof 02: WordPress Store &amp; Landing Page Walkthrough</span>
+                            <span class="proof-slot-badge">Screen Recording / Screenshot</span>
                         </div>
-                        <div class="proof-showcase-container">
-
-                            <div class="proof-sub-title">
-                                <i class="fas fa-display"></i> Interactive Storefront &amp; Checkout Flow Showcase
-                            </div>
-                            <p class="proof-sub-desc">
-                                Toggle through live high-resolution production views covering the desktop storefront, mobile-responsive layout, dedicated carrier product landing page (PDP), and friction-free slide-out mini-cart drawer.
-                            </p>
-
-                            <!-- UX View Switcher -->
-                            <div class="proof-tab-bar" role="tablist" aria-label="Storefront UX Views">
-                                <button type="button" class="proof-tab-btn active" id="btn-ux-dt-home" role="tab" aria-selected="true" tabindex="0" aria-controls="ux-dt-home" onclick="switchUxView('ux-dt-home', this)">
-                                    <i class="fas fa-desktop"></i> Desktop Storefront
-                                </button>
-                                <button type="button" class="proof-tab-btn" id="btn-ux-mb-home" role="tab" aria-selected="false" tabindex="-1" aria-controls="ux-mb-home" onclick="switchUxView('ux-mb-home', this)">
-                                    <i class="fas fa-mobile-alt"></i> Mobile Storefront
-                                </button>
-                                <button type="button" class="proof-tab-btn" id="btn-ux-dt-pdp" role="tab" aria-selected="false" tabindex="-1" aria-controls="ux-dt-pdp" onclick="switchUxView('ux-dt-pdp', this)">
-                                    <i class="fas fa-shopping-bag"></i> Carrier Landing Page (PDP)
-                                </button>
-                                <button type="button" class="proof-tab-btn" id="btn-ux-drawer" role="tab" aria-selected="false" tabindex="-1" aria-controls="ux-drawer" onclick="switchUxView('ux-drawer', this)">
-                                    <i class="fas fa-shopping-cart"></i> Slide-Out Mini-Cart Drawer
-                                </button>
-                            </div>
-
-                            <!-- View 1: Desktop Storefront -->
-                            <div id="ux-dt-home" class="ux-pane" role="tabpanel" aria-labelledby="btn-ux-dt-home" style="display: block;">
-                                <div class="mockup-window">
-                                    <div class="mockup-header">
-                                        <div class="mockup-dots">
-                                            <span class="mockup-dot dot-red"></span>
-                                            <span class="mockup-dot dot-yellow"></span>
-                                            <span class="mockup-dot dot-green"></span>
-                                        </div>
-                                        <div class="mockup-address-bar">
-                                            <i class="fas fa-lock"></i> https://petshop-demo.com/ &bull; Desktop Storefront
-                                        </div>
-                                        <span>WordPress + WooCommerce</span>
-                                    </div>
-                                    <div class="mockup-img-wrap">
-                                        <img src="assets/pet-shop/live_dt_home.png" alt="Desktop Storefront Homepage Screenshot" loading="lazy">
-                                    </div>
-                                    <div class="proof-caption-box">
-                                        <strong>Desktop Storefront &mdash; Conversion Architecture:</strong> Clean navigation header, unified search bar, and prominent trust badges (Genuine Import Authenticity, 80৳ Dhaka Express Delivery). Intuitive category grid guides visitors directly into high-demand segments (Cat Food, Litter, Carriers, Accessories).
-                                    </div>
-                                </div>
-                                <div class="ux-features-grid">
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-layer-group"></i> Proportional Header Balance</h6>
-                                        <p>15px logo spacing alignment with integrated search bar and direct phone ordering hotline.</p>
-                                    </div>
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-bolt"></i> Visual Category Navigation</h6>
-                                        <p>Visual category blocks with instant filter capabilities to reduce browsing friction.</p>
-                                    </div>
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-shield-alt"></i> COD Trust Signals</h6>
-                                        <p>Prominent Cash-on-Delivery badges eliminating prepayment anxiety for first-time shoppers.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- View 2: Mobile Storefront -->
-                            <div id="ux-mb-home" class="ux-pane" role="tabpanel" aria-labelledby="btn-ux-mb-home" style="display: none;">
-                                <div class="mockup-window">
-                                    <div class="mockup-header">
-                                        <div class="mockup-dots">
-                                            <span class="mockup-dot dot-red"></span>
-                                            <span class="mockup-dot dot-yellow"></span>
-                                            <span class="mockup-dot dot-green"></span>
-                                        </div>
-                                        <div class="mockup-address-bar">
-                                            <i class="fas fa-lock"></i> https://petshop-demo.com/ &bull; Mobile Viewport (375px)
-                                        </div>
-                                        <span>Mobile-First Optimized</span>
-                                    </div>
-                                    <div class="mockup-img-wrap-mobile">
-                                        <img src="assets/pet-shop/live_mb_home.png" alt="Mobile WordPress Storefront Homepage Screenshot" loading="lazy">
-                                    </div>
-                                    <div class="proof-caption-box">
-                                        <strong>Mobile Storefront &mdash; Zero Friction Browsing:</strong> Tailored specifically for Dhaka mobile traffic (over 85% of shoppers). Eliminates horizontal overflow, implements touch-friendly 48px tap targets, and features a sticky quick-action bar for instant ordering.
-                                    </div>
-                                </div>
-                                <div class="ux-features-grid">
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-mobile"></i> Fluid 100vw Responsive</h6>
-                                        <p>Coded with zero horizontal scroll bar bug, ensuring flawless rendering on all iPhone and Android viewports.</p>
-                                    </div>
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-hand-pointer"></i> Thumb-Zone CTAs</h6>
-                                        <p>Single-column product presentation with thumb-friendly quick add-to-cart buttons.</p>
-                                    </div>
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-tachometer-alt"></i> Fast 4G Page Speed</h6>
-                                        <p>Optimized image compression and lightweight CSS for rapid loading on cellular connections.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- View 3: Carrier Product Landing Page (PDP) -->
-                            <div id="ux-dt-pdp" class="ux-pane" role="tabpanel" aria-labelledby="btn-ux-dt-pdp" style="display: none;">
-                                <div class="proof-tab-bar pdp-toggle-bar" role="tablist" aria-label="PDP Viewport Devices">
-                                    <button type="button" class="proof-tab-btn active" id="btn-pdp-dt" role="tab" aria-selected="true" tabindex="0" aria-controls="pdp-view-dt" onclick="switchPdpDevice('dt', this)">
-                                        <i class="fas fa-desktop"></i> Desktop (1440px)
-                                    </button>
-                                    <button type="button" class="proof-tab-btn" id="btn-pdp-mb" role="tab" aria-selected="false" tabindex="-1" aria-controls="pdp-view-mb" onclick="switchPdpDevice('mb', this)">
-                                        <i class="fas fa-mobile-alt"></i> Mobile (375px)
-                                    </button>
-                                </div>
-                                <div id="pdp-view-dt" class="pdp-device-pane" role="tabpanel" aria-labelledby="btn-pdp-dt" style="display: block;">
-                                    <div class="mockup-window">
-                                        <div class="mockup-header">
-                                            <div class="mockup-dots">
-                                                <span class="mockup-dot dot-red"></span>
-                                                <span class="mockup-dot dot-yellow"></span>
-                                                <span class="mockup-dot dot-green"></span>
-                                            </div>
-                                            <div class="mockup-address-bar">
-                                                <i class="fas fa-lock"></i> https://petshop-demo.com/product/breathable-capsule-pet-carrier/
-                                            </div>
-                                            <span>Desktop PDP &bull; 1440px</span>
-                                        </div>
-                                        <div class="mockup-img-wrap">
-                                            <img src="assets/pet-shop/live_dt_pdp_perfect.png" alt="Carrier Product Landing Page Desktop Screenshot" loading="lazy">
-                                        </div>
-                                        <div class="proof-caption-box">
-                                            <strong>Product Landing Page (Desktop View):</strong> Above-the-fold dynamic price discount display, real-time color swatch selection, stock availability counter, and a high-contrast <em>"ক্যাশ অন ডেলিভারিতে অর্ডার করুন"</em> (Order via COD) primary CTA button. Includes live mobile PDP verification alongside desktop.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="pdp-view-mb" class="pdp-device-pane" role="tabpanel" aria-labelledby="btn-pdp-mb" style="display: none;">
-                                    <div class="mockup-window">
-                                        <div class="mockup-header">
-                                            <div class="mockup-dots">
-                                                <span class="mockup-dot dot-red"></span>
-                                                <span class="mockup-dot dot-yellow"></span>
-                                                <span class="mockup-dot dot-green"></span>
-                                            </div>
-                                            <div class="mockup-address-bar">
-                                                <i class="fas fa-lock"></i> https://petshop-demo.com/product/breathable-capsule-pet-carrier/ &bull; Mobile View
-                                            </div>
-                                            <span>Mobile PDP &bull; 375px</span>
-                                        </div>
-                                        <div class="mockup-img-wrap-mobile">
-                                            <img src="assets/pet-shop/live_mb_pdp.png" alt="Carrier Product Landing Page Mobile Screenshot" loading="lazy">
-                                        </div>
-                                        <div class="proof-caption-box">
-                                            <strong>Product Landing Page (Mobile View):</strong> 100vw responsive mobile view with thumb-accessible sticky buy button, instant variant radio taps, and zero layout shift.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ux-features-grid">
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-tags"></i> Above-the-Fold CRO</h6>
-                                        <p>Dynamic discount badges (e.g. 15% OFF) and clear pricing placed before any scroll point.</p>
-                                    </div>
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-palette"></i> Live Color Swatches</h6>
-                                        <p>Interactive color and size swatches update product imagery and stock status instantly.</p>
-                                    </div>
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-shopping-basket"></i> 1-Click COD CTA</h6>
-                                        <p>Direct green Cash-on-Delivery purchase button opening instant order checkout.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- View 4: Slide-Out Mini-Cart Drawer -->
-                            <div id="ux-drawer" class="ux-pane" role="tabpanel" aria-labelledby="btn-ux-drawer" style="display: none;">
-                                <div class="mockup-window">
-                                    <div class="mockup-header">
-                                        <div class="mockup-dots">
-                                            <span class="mockup-dot dot-red"></span>
-                                            <span class="mockup-dot dot-yellow"></span>
-                                            <span class="mockup-dot dot-green"></span>
-                                        </div>
-                                        <div class="mockup-address-bar">
-                                            <i class="fas fa-lock"></i> https://petshop-demo.com/ &bull; Mobile Slide-Out Cart Drawer Active
-                                        </div>
-                                        <span>Mobile AJAX Cart</span>
-                                    </div>
-                                    <div class="mockup-img-wrap-mobile">
-                                        <img src="assets/pet-shop/live_verified_drawer_fixed.png" alt="Slide-Out Mini-Cart Drawer Screenshot" loading="lazy">
-                                    </div>
-                                    <div class="proof-caption-box">
-                                        <strong>Slide-Out Mini-Cart Drawer &mdash; 2-Tap COD Checkout:</strong> Custom-coded AJAX slide-out cart drawer that emerges instantly upon clicking "Add to Cart" without page reloads. Shows dynamic free delivery threshold progress, quantity steppers, and a direct 2-tap Cash-on-Delivery checkout trigger that skips lengthy account creation forms.
-                                    </div>
-                                </div>
-                                <div class="ux-features-grid">
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-sync-alt"></i> Zero Page Reload</h6>
-                                        <p>AJAX cart updates cart totals and items smoothly without interrupting the customer's shopping flow.</p>
-                                    </div>
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-truck"></i> Free Shipping Meter</h6>
-                                        <p>Dynamic progress bar gamifies cart size by showing exactly how much is needed for free delivery.</p>
-                                    </div>
-                                    <div class="ux-feature-item">
-                                        <h6><i class="fas fa-check-circle"></i> 2-Tap Frictionless COD</h6>
-                                        <p>One-tap button to instant COD confirmation form, cutting checkout drop-off rates by over 40%.</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                        <div class="proof-slot-body">
+                            <i class="fas fa-desktop"></i>
+                            <strong>Verification Slot: Live Storefront, Carrier Landing Page &amp; Slide-Out Cart</strong>
+                            <p>Ready for your screen recording / raw screenshot resources.</p>
                         </div>
                     </div>
                 </div>
@@ -1477,97 +568,8 @@
 
     </main>
 
-    <!-- Interactive Showcase Scripts -->
     <script>
-        function updateTabState(btn) {
-            if (btn && btn.parentElement) {
-                btn.parentElement.querySelectorAll('.proof-tab-btn').forEach(function(b) {
-                    b.classList.remove('active');
-                    b.setAttribute('aria-selected', 'false');
-                    b.setAttribute('tabindex', '-1');
-                });
-                btn.classList.add('active');
-                btn.setAttribute('aria-selected', 'true');
-                btn.setAttribute('tabindex', '0');
-            }
-        }
-
-        function switchCalendarTab(tabId, btn) {
-            document.querySelectorAll('.cal-pane').forEach(function(pane) {
-                pane.style.display = 'none';
-            });
-            updateTabState(btn);
-            var target = document.getElementById(tabId);
-            if (target) {
-                target.style.display = 'block';
-            }
-        }
-
-        function switchGraphicTab(tabId, btn) {
-            document.querySelectorAll('.grp-pane').forEach(function(pane) {
-                pane.style.display = 'none';
-            });
-            updateTabState(btn);
-            var target = document.getElementById(tabId);
-            if (target) {
-                target.style.display = 'block';
-            }
-        }
-
-        function switchUxView(viewId, btn) {
-            document.querySelectorAll('.ux-pane').forEach(function(pane) {
-                pane.style.display = 'none';
-            });
-            updateTabState(btn);
-            var target = document.getElementById(viewId);
-            if (target) {
-                target.style.display = 'block';
-            }
-        }
-
-        function switchPdpDevice(device, btn) {
-            var dtPane = document.getElementById('pdp-view-dt');
-            var mbPane = document.getElementById('pdp-view-mb');
-            if (device === 'dt') {
-                if (dtPane) dtPane.style.display = 'block';
-                if (mbPane) mbPane.style.display = 'none';
-            } else {
-                if (dtPane) dtPane.style.display = 'none';
-                if (mbPane) mbPane.style.display = 'block';
-            }
-            updateTabState(btn);
-        }
-
-        // W3C WAI-ARIA APG Arrow Key Navigation for Tablists
-        document.querySelectorAll('.proof-tab-bar[role="tablist"]').forEach(function(tablist) {
-            tablist.addEventListener('keydown', function(e) {
-                var tabs = Array.from(tablist.querySelectorAll('.proof-tab-btn[role="tab"]'));
-                var index = tabs.indexOf(document.activeElement);
-                if (index === -1) return;
-
-                var targetIndex = -1;
-                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    targetIndex = (index + 1) % tabs.length;
-                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    targetIndex = (index - 1 + tabs.length) % tabs.length;
-                } else if (e.key === 'Home') {
-                    e.preventDefault();
-                    targetIndex = 0;
-                } else if (e.key === 'End') {
-                    e.preventDefault();
-                    targetIndex = tabs.length - 1;
-                }
-
-                if (targetIndex !== -1) {
-                    tabs[targetIndex].click();
-                    tabs[targetIndex].focus();
-                }
-            });
-        });
-
-        // Mutual-Exclusion Video Playback: Pauses other reels when one starts playing
+        // Pause other videos when one starts playing
         document.querySelectorAll('video').forEach(function(vid) {
             vid.addEventListener('play', function() {
                 document.querySelectorAll('video').forEach(function(other) {
