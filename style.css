@@ -860,8 +860,9 @@ section:hover {
 .tool-capsule-icon.canva { background: linear-gradient(135deg, #00C4CC, #7D2AE8); }
 .tool-capsule-icon.sheets { background-color: #0F9D58; }
 .tool-capsule-icon.ai { background: linear-gradient(135deg, #7A5AF8, #00C4CC); }
-.tool-capsule-icon.flow { background: linear-gradient(135deg, #4285F4, #0F9D58); }
-.tool-capsule-icon.antigravity { background: linear-gradient(135deg, #1F1F1F, #D98E20); }
+.tool-capsule-icon.flow { background-color: #1F1F1F; padding: 4px; }
+.tool-capsule-icon.antigravity { background-color: #FFFFFF; border: 1px solid var(--border-subtle); padding: 5px; }
+.tool-capsule-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
 /* ==========================================================================
    Dedicated Proof Hub Page (proof.html) Styles
