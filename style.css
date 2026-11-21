@@ -860,6 +860,8 @@ section:hover {
 .tool-capsule-icon.canva { background: linear-gradient(135deg, #00C4CC, #7D2AE8); }
 .tool-capsule-icon.sheets { background-color: #0F9D58; }
 .tool-capsule-icon.ai { background: linear-gradient(135deg, #7A5AF8, #00C4CC); }
+.tool-capsule-icon.flow { background: linear-gradient(135deg, #4285F4, #0F9D58); }
+.tool-capsule-icon.antigravity { background: linear-gradient(135deg, #1F1F1F, #D98E20); }
 
 /* ==========================================================================
    Dedicated Proof Hub Page (proof.html) Styles
